@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './App';
-import {Start} from './classes.js'
+import {Start} from './components.js'
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
