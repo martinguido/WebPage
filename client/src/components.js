@@ -1,17 +1,16 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Form , Button} from 'react-bootstrap';
 import logo from './img/logo.png';
 import logoFB from './img/logoFB.png';
 import logoTW from './img/logoTW.png';
 import logoLI from './img/logoLI.png';
 import logoIG from './img/logoIG.png';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
  export class Start extends React.Component {
     render(){
         return <>
-        <Header />
-        <Menu />
-        <Footer />
+        <SubscribeNewsletter />
         </>;
     }
 }
@@ -72,7 +71,6 @@ export class Footer extends React.Component {
             <img src={logoLI} alt='Logo de LinkedIn'/>
             <img src={logoIG} alt='Logo de Instagram'/>
         </div>
-        <SubscribeNewsletter />
         </>;
     }
 }
@@ -81,17 +79,25 @@ export class SubscribeNewsletter extends React.Component {
         return <>
         <div>
             <h1>Subscribite para recibir más información</h1>
+ 
             <Form>
-                <Form.Group className="mb-3" controlId="formBasic">
+
+                <Form.Group className="mb-3" controlId="formBasicText">
                     <Form.Label>Nombre Completo</Form.Label>
-                    <Form.Control type="email" placeholder="Ingresa tu nombre" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Direccion de Email</Form.Label>
-                    <Form.Control type="email" placeholder="Ingresa tu email" />
-                    <Form.Text className="text-muted">No compartiremos este mail con nadie más</Form.Text>
+                    <Form.Control type="name" placeholder="Ingresa tu nombre" />
                 </Form.Group>
 
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Dirección de Email</Form.Label>
+                    <Form.Control type="email" placeholder="Ingresa tu email" />
+                    <Form.Text className="text-muted">
+                        Nunca compartiremos tu dirección de email con nadie.
+                    </Form.Text>
+                </Form.Group>
+
+                <Button variant="primary" type="submit">
+                    Subscribirme
+                </Button>
             </Form>
         </div>
         </>;
