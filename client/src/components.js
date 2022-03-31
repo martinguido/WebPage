@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form , Button} from 'react-bootstrap';
 import logo from './img/logo.png';
 import logoFB from './img/logoFB.png';
 import logoTW from './img/logoTW.png';
@@ -10,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
  export class Start extends React.Component {
     render(){
         return <>
-        <SubscribeNewsletter />
+        <Header />
+        <Footer />
         </>;
     }
 }
@@ -23,6 +23,7 @@ export class Header extends React.Component {
                 <img src={logo} alt='Logo Fundacion Arbolar'/>
             
             </div>
+        <Menu/>
         </>;
     }
 }
@@ -71,6 +72,7 @@ export class Footer extends React.Component {
             <img src={logoLI} alt='Logo de LinkedIn'/>
             <img src={logoIG} alt='Logo de Instagram'/>
         </div>
+        <SubscribeNewsletter/>
         </>;
     }
 }
@@ -79,26 +81,21 @@ export class SubscribeNewsletter extends React.Component {
         return <>
         <div>
             <h1>Subscribite para recibir más información</h1>
- 
-            <Form>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputName1">Nombre</label>
+                    <input type="name" class="form-control" id="exampleInputName1" placeholder="Ingresa tu nombre"/>
+                </div>
 
-                <Form.Group className="mb-3" controlId="formBasicText">
-                    <Form.Label>Nombre Completo</Form.Label>
-                    <Form.Control type="name" placeholder="Ingresa tu nombre" />
-                </Form.Group>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Dirección de Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email"/>
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu email con nadie.</small>
+                </div>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Dirección de Email</Form.Label>
-                    <Form.Control type="email" placeholder="Ingresa tu email" />
-                    <Form.Text className="text-muted">
-                        Nunca compartiremos tu dirección de email con nadie.
-                    </Form.Text>
-                </Form.Group>
-
-                <Button variant="primary" type="submit">
-                    Subscribirme
-                </Button>
-            </Form>
+                <button type="submit" class="btn btn-primary">Subscribirme</button>
+            
+            </form>
         </div>
         </>;
     }
