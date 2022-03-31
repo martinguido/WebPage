@@ -4,7 +4,8 @@ import logoFB from './img/logoFB.png';
 import logoTW from './img/logoTW.png';
 import logoLI from './img/logoLI.png';
 import logoIG from './img/logoIG.png';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './css/components.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
  export class Start extends React.Component {
     render(){
@@ -19,9 +20,9 @@ export class Header extends React.Component {
         return <><div>
                 <h1>Fundación Arbolar</h1>
             </div>
-            <div>
-                <img src={logo} alt='Logo Fundacion Arbolar'/>
-            
+            <div class='logoHeader'>
+                <img src={logo} alt='Logo Fundacion Arbolar' class='logoArbolarBlur'/>
+                <img src={logo} alt='Logo Fundacion Arbolar' class='logoArbolar'/>
             </div>
         <Menu/>
         </>;
@@ -65,12 +66,14 @@ export class Menu extends React.Component {
 export class Footer extends React.Component {
     render(){
         return <>
-        <div>
-            <h1>Conectate y Seguinos:</h1>
-            <img src={logoFB} alt='Logo de Facebook'/>
-            <img src={logoTW} alt='Logo de Twitter'/>
-            <img src={logoLI} alt='Logo de LinkedIn'/>
-            <img src={logoIG} alt='Logo de Instagram'/>
+        <div class='footerdiv'>
+            <h1 class='footerh2'>Conectate y Seguinos:</h1>
+            <div class='footerlogos'>
+                <img src={logoFB} alt='Logo de Facebook' class='logo' />
+                <img src={logoTW} alt='Logo de Twitter' class='logo' />
+                <img src={logoLI} alt='Logo de LinkedIn' class='logo' />
+                <img src={logoIG} alt='Logo de Instagram' class='logo'/>
+            </div>
         </div>
         <SubscribeNewsletter/>
         </>;
