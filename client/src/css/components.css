@@ -1,49 +1,9 @@
-body{
-    background-color: #F8F6F2 ;
-}
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+@import "networks.css";
+@import "newsletter.css";
+@import "logo.css";
 
-.logo{
-    width:70px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-.logoHeader{
-    display: block;
-    width: 100%;
-    height: 300px;
-    text-align: right;
-    padding-right: 350px;
-}
-
-.logoArbolarBlur{
-    -webkit-filter: blur(100px);
-    -moz-filter: blur(100px);
-    -o-filter: blur(100px);
-    -ms-filter: blur(100px);
-    filter: blur(100px);
-}
-.logoArbolarBlur, .logoArbolar{
-    position: absolute;
-    width: 300px;
-    border-radius: 100%;
-    margin-top: 20px;
-    margin-right: 300px;
-}
-
-.footerdiv{
-    justify-content: center;
-    display: flex;
-    border-width: 4px;
-    border-style: solid;
-    border-color: #698F3F;
-    background-color: #E9E3D8;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 15px;
-    padding-bottom: 10px;
-}
-
-.footerh2{
-    align-self: center;
-    display: block;
+body {
+	background: #CAD3DB;
+	font-family: 'Mulish', sans-serif;
 }
