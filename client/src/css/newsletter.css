@@ -27,12 +27,13 @@
 
 .form {
 	margin-bottom: 25px;
-    width: 38%;
+    width: 40%;
 }
 
 .form__name {
 	padding: 20px 25px;
 	border-radius: 5px;
+	text-align: center;
  	border: 1px solid #CAD3DB;
 	width: 100%;
 	font-size: 16px;
@@ -45,10 +46,12 @@
 }
 
 .form__email {
+	margin-bottom: 25px;
 	padding: 20px 25px;
 	border-radius: 5px;
+	text-align: center;
  	border: 1px solid #CAD3DB;
-	width: 60%;
+	width: 250%;
     height: 65px;
 	font-size: 16px;
 	color: #0F121F;
@@ -58,12 +61,10 @@
 	outline: 1px solid #698F3F;
 }
 .form__button {
-    margin-left: 3% ;
-    display: inline;
 	background: #3D9FFF;
 	padding: 10px;
 	border: none;
-	width: 170px;
+	width: 150px;
 	height: 65px;
 	border-radius: 5px;
 	font-size: 18px;
@@ -76,10 +77,18 @@
 }
 
 .notice {
-	width: 450px;
+	width: 97%;
+	text-align: center;
+
 }
 
 .notice__copy{
     margin-left: 2.5%;
-    justify-content: center;
+
+}
+
+.formSecondRow{
+	background-color: #FFFF;
+	width: 40%;
+	
 }

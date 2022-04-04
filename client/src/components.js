@@ -79,14 +79,16 @@ export function SubscribeNewsletter(){
         <div class="form">
 		    <input type="name" class="form__name" placeholder="Ingresa tu nombre" />
 	    </div>
-        <div class="form">
-	        <input type="email" class="form__email" placeholder="Ingresa tu direccion de email" />
-	        <button class="form__button">Subscribite</button>
-	    </div>
-	    <div class="notice">
-	        <input type="checkbox"/>
-		    <span class="notice__copy">Estoy de acuerdo con subscribirme al newsletter mensual.</span>
-	    </div>
+        <div class="formSecondRow">
+            <div class="form">
+	            <input type="email" class="form__email" placeholder="Ingresa tu direccion de email" />
+	            <button class="form__button">Subscribite</button>
+	        </div>
+	        <div class="notice">
+	            <input type="checkbox"/>
+		        <span class="notice__copy">Estoy de acuerdo con subscribirme al newsletter mensual.</span>
+	        </div>
+        </div>
     </div>  
     </> 
 }
