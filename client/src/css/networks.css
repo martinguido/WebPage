@@ -1,23 +1,24 @@
-.networks{
-    justify-content: center;
-    display: flex;
-    
+.networks {
+  justify-content: center;
+  display: flex;
 }
-.footerdiv{
-    border-width: 3px;
-    border-radius: 15px;
-    border-style: solid;
-    border-color: #698F3F;
-    background-color: #E9E3D8;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 50px;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.footerdiv {
+  border-width: 3px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #698f3f;
+  background-color: #e9e3d8;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.footerh2{
-    align-self: center;
-    display: block;
+.footerh2 {
+  align-self: center;
+  display: block;
 }

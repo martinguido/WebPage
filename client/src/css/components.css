@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
 @import "networks.css";
 @import "newsletter.css";
 @import "logo.css";
 
 body {
-	background: #CAD3DB;
-	font-family: 'Mulish', sans-serif;
+  background: #cad3db;
+  font-family: "Mulish", sans-serif;
 }
