@@ -1,19 +1,8 @@
 import React from "react";
+import { Start } from "./components/start.js";
+import "./css/components.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
-  return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
-  );
+export function App() {
+  return <Start />;
 }
-
-export default App;
