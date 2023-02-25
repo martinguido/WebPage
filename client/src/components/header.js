@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "./menu.js";
+import { NavBar } from "./NavBar";
 import logo from "../img/logo.png";
 
 export function Header() {
@@ -12,7 +12,7 @@ export function Header() {
         <img src={logo} alt="Logo Fundacion Arbolar" class="logoArbolarBlur" />
         <img src={logo} alt="Logo Fundacion Arbolar" class="logoArbolar" />
       </div>
-      <Menu />
+      <NavBar />
     </>
   );
 }

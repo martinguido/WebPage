@@ -7,7 +7,7 @@ import logoIG from "../img/logoIG.png";
 
 export function Footer() {
   return (
-    <>
+    <div>
       <div class="footerdiv networks">
         <h1 class="footerh2">Conectate y Seguinos:</h1>
         <div class="footerlogos">
@@ -18,6 +18,6 @@ export function Footer() {
         </div>
       </div>
       <SubscribeNewsletter />
-    </>
+    </div>
   );
 }
