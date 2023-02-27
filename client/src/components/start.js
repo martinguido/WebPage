@@ -1,14 +1,16 @@
 import React from "react";
-import { Header } from "./header.js";
-import { Footer } from "./footer.js";
-import { NavBar } from "./NavBar.js";
+import Header from "./Header.js";
+import Footer from "./Footer.js";
+import SubscribeNewsletter from "./SubscribeNewsletter.js";
+import NavBar from "./NavBar.js";
 
-export function Start() {
+export default function Start() {
   return (
-    <div>
-      <NavBar/>
-      {/* <Header />
-      <Footer /> */}
+    <div className="start">
+      <Header />
+      <NavBar />
+      <Footer />
+      <SubscribeNewsletter />
     </div>
   );
 }

@@ -1,13 +1,8 @@
-.networks {
+.footer {
   justify-content: center;
   display: flex;
-}
-.footerdiv {
-  border-width: 3px;
   border-radius: 15px;
-  border-style: solid;
-  border-color: #698f3f;
-  background-color: #e9e3d8;
+  background-color: #d7eadd;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 50px;
@@ -18,7 +13,13 @@
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.footerh2 {
+.footerTitle {
   align-self: center;
   display: block;
+}
+
+.logo {
+  width: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
 }

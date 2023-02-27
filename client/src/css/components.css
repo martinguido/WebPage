@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
-@import "networks.css";
-@import "newsletter.css";
-@import "logo.css";
+@import "Footer.css";
+@import "SubscribeNewsletter.css";
+@import "Header.css";
 @import "NavBar.css";
+
+.start {
+  display: flex;
+  flex-direction: column;
+}
 
 body {
   background: #cad3db;
