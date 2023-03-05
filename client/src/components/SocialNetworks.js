@@ -4,7 +4,7 @@ import logoTW from "../img/logoTW.png";
 import logoLI from "../img/logoLI.png";
 import logoIG from "../img/logoIG.png";
 
-export default function Footer() {
+export default function SocialNetworks() {
   return (
     <div className="footer">
       <h1 className="footerTitle">Conectate y Seguinos:</h1>
