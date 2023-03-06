@@ -3,6 +3,7 @@
 @import "SubscribeNewsletter.css";
 @import "Header.css";
 @import "NavBar.css";
+@import "Mision.css";
 
 .start {
   display: flex;

@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./components/Home.js";
-import "./css/Components.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header.js";
 import NavBar from "./components/NavBar.js";

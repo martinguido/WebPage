@@ -37,5 +37,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "127.0.0.1:3001"
+  "proxy": "https://127.0.0.1:3001"
 }
