@@ -1,9 +1,9 @@
 import React from "react";
 
-const FAQ = () => {
+const Notas = () => {
   <div className="start">
-    <h1>FAQ</h1>
+    <h1>Notas</h1>
   </div>;
 };
 
-export default FAQ;
+export default Notas;

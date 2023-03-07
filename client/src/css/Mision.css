@@ -22,7 +22,7 @@
   flex-grow: 1;
   object-fit: cover;
   opacity: 0.8;
-  transition: 1s ease;
+  transition: 2s ease;
 }
 .mision1:hover,
 .mision2:hover,
@@ -33,13 +33,25 @@
   opacity: 1;
 }
 .mision1:hover > .misionText1 {
-  display: inline-block;
+  /* display: inline-block; */
+  height: 100px;
+  transition: 1s ease;
+  visibility: visible;
+  opacity: 1;
 }
 .mision2:hover > .misionText2 {
-  display: inline-block;
+  /* display: inline-block; */
+  height: 100px;
+  transition: 1s ease;
+  visibility: visible;
+  opacity: 1;
 }
 .mision3:hover > .misionText3 {
-  display: inline-block;
+  /* display: inline-block; */
+  height: 100px;
+  transition: 1s ease;
+  visibility: visible;
+  opacity: 1;
 }
 
 .mision1 {
@@ -56,6 +68,7 @@
   font-weight: 400;
 }
 .misionSubtitle {
+  padding-top: 5%;
   color: blanchedalmond;
   align-self: center;
   font-weight: 700;
@@ -63,11 +76,15 @@
 .misionText1,
 .misionText2,
 .misionText3 {
-  display: none;
+  /* display: none; */
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  height: 0px;
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 3%;
+  padding-top: 1%;
   color: white;
   font-size: 16px;
 }

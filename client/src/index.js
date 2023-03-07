@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import { App } from "./App.js";
-import Mision from "./components/Mision.js";
+import Contactanos from "./components/Contactanos.js";
 import "./css/Components.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ReactDOM.render(
   <React.StrictMode>
     {/* <BrowserRouter> */}
-    <Mision />
+    <Contactanos />
     {/* </BrowserRouter> */}
   </React.StrictMode>,
   document.getElementById("root")

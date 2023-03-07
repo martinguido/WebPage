@@ -17,27 +17,27 @@ import SocialNetworks from "./components/SocialNetworks.js";
 import ReachUs from "./components/ReachUs.js";
 import { Route, Routes } from "react-router-dom";
 
-export function App() {
-  return (
+const App = () => {
+  <div>
+    <Header />
+    <NavBar />
     <div>
-      <Header />
-      <NavBar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Mision" element={<Mision />} />
-          <Route path="/Notas" element={<Notes />} />
-          <Route path="/Testimonios" element={<Testimonies />} />
-          <Route path="/Padrinos" element={<Godfathers />} />
-          <Route path="/Voluntarios" element={<Voluntaries />} />
-          <Route path="/ConsejosVerdes" element={<GreenKnwoledge />} />
-          <Route path="/Logros" element={<Goals />} />
-          <Route path="/Donaciones" element={<Donations />} />
-          <Route path="/FAQ" element={<FAQ />} />
-          <Route path="/Redes" element={<SocialNetworks />} />
-          <Route path="/Contactanos" element={<ReachUs />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Mision" element={<Mision />} />
+        <Route path="/Notas" element={<Notes />} />
+        <Route path="/Testimonios" element={<Testimonies />} />
+        <Route path="/Padrinos" element={<Godfathers />} />
+        <Route path="/Voluntarios" element={<Voluntaries />} />
+        <Route path="/ConsejosVerdes" element={<GreenKnwoledge />} />
+        <Route path="/Logros" element={<Goals />} />
+        <Route path="/Donaciones" element={<Donations />} />
+        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/Redes" element={<SocialNetworks />} />
+        <Route path="/Contactanos" element={<ReachUs />} />
+      </Routes>
     </div>
-  );
-}
+  </div>;
+};
+
+export default App;
