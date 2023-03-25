@@ -63,3 +63,12 @@ li:hover ul#subMenu {
 #subMenu h1 {
   background-color: #252525;
 }
+
+.navBar {
+  display: block;
+}
+
+.links {
+  text-decoration: none;
+  background-color: pink;
+}

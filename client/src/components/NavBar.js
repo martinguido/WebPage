@@ -1,64 +1,72 @@
 import React from "react";
-import "../css/NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  <div className="navBar">
-    <nav className="dropDownMenu">
-      <ul>
-        <li>
-          <h1>Home</h1>
-        </li>
-        <li>
-          <h1>Conocenos</h1>
-          <ul id="subMenu">
-            <li>
-              <h1>Mision, Vision y Objetivos</h1>
-            </li>
-            <li>
-              <h1>Notas</h1>
-            </li>
-            <li>
-              <h1>Testimonios</h1>
-            </li>
-            <li>
-              <h1>Padrinos</h1>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h1>Actividades</h1>
-          <ul id="subMenu">
-            <li>
-              <h1>Voluntarios</h1>
-            </li>
-            <li>
-              <h1>Consejos Verdes</h1>
-            </li>
-            <li>
-              <h1>Nuestros Logros</h1>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h1>Donaciones</h1>
-        </li>
-        <li>
-          <h1>Contactanos</h1>
-          <ul id="subMenu">
-            <li>
-              <h1>Preguntas Frecuentes</h1>
-            </li>
-            <li>
-              <h1>Nuestras Redes</h1>
-            </li>
-            <li>
-              <h1>Dejanos tu Consulta</h1>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>;
+  return (
+    <div className="navBar">
+      <nav className="dropDownMenu">
+        <ul>
+          <li>
+            <h1>
+              <Link to="/" className="links">Home</Link>
+            </h1>
+          </li>
+          <li>
+            <h1>Conocenos</h1>
+            <ul id="subMenu">
+              <li>
+                <h1>
+                  <Link to="/Mision" className="links">Mision</Link>
+                </h1>
+              </li>
+              <li>
+                <h1>
+                  <Link to="/Testimonios" className="links">Testimonios</Link>
+                </h1>
+              </li>
+              <li>
+                <h1>
+                  <Link to="/Aliados" className="links">Aliados</Link>
+                </h1>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h1>Actividades</h1>
+            <ul id="subMenu">
+              <li>
+                <h1>
+                  <Link to="/Voluntarios" className="links">Voluntarios</Link>
+                </h1>
+              </li>
+              <li>
+                <h1>
+                  <Link to="/ConsejosVerdes" className="links">Consejos Verdes</Link>
+                </h1>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h1><Link to="/Donaciones" className="links">Donaciones</Link></h1>
+          </li>
+          <li>
+            <h1>Contactanos</h1>
+            <ul id="subMenu">
+              <li>
+                <h1><Link to="/FAQ" className="links">FAQ</Link></h1>
+              </li>
+              <li>
+                <h1><Link to="/Redes" className="links">Redes</Link></h1>
+              </li>
+              <li>
+                <h1><Link to="/Contactanos" className="links">Contactanos</Link></h1>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 };
 
 export default NavBar;

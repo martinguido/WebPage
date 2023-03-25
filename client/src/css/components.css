@@ -5,6 +5,7 @@
 @import "NavBar.css";
 @import "Mision.css";
 @import "Contactanos.css";
+@import "App.css";
 
 .start {
   display: flex;

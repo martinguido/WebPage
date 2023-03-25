@@ -1,5 +1,7 @@
 .header {
   background-color: green;
+  padding-bottom: 35px;
+  margin-bottom: 5px;
 }
 .logoA {
   width: 70px;

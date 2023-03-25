@@ -1,43 +1,42 @@
 import React from "react";
-import Home from "./components/Home.js";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./components/Home.js";
 import Header from "./components/Header.js";
 import NavBar from "./components/NavBar.js";
 import Mision from "./components/Mision.js";
-import Notes from "./components/Notes.js";
-import Testimonies from "./components/Testimonies.js";
-import Godfathers from "./components/Godfathers.js";
-import Voluntaries from "./components/Voluntaries.js";
-import GreenKnwoledge from "./components/GreenKnowledge.js";
-import Goals from "./components/Goals.js";
-import Donations from "./components/Donations.js";
+import Testimonios from "./components/Testimonios.js";
+import Aliados from "./components/Aliados.js";
+import Voluntarios from "./components/Voluntarios.js";
+import ConsejosVerdes from "./components/ConsejosVerdes";
+import Donaciones from "./components/Donaciones.js";
 import FAQ from "./components/FAQ.js";
-import SocialNetworks from "./components/SocialNetworks.js";
-import ReachUs from "./components/ReachUs.js";
+import Redes from "./components/Redes.js";
+import Contactanos from "./components/Contactanos.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
-  <div>
-    <Header />
-    <NavBar />
+  return (
     <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Mision" element={<Mision />} />
-        <Route path="/Notas" element={<Notes />} />
-        <Route path="/Testimonios" element={<Testimonies />} />
-        <Route path="/Padrinos" element={<Godfathers />} />
-        <Route path="/Voluntarios" element={<Voluntaries />} />
-        <Route path="/ConsejosVerdes" element={<GreenKnwoledge />} />
-        <Route path="/Logros" element={<Goals />} />
-        <Route path="/Donaciones" element={<Donations />} />
-        <Route path="/FAQ" element={<FAQ />} />
-        <Route path="/Redes" element={<SocialNetworks />} />
-        <Route path="/Contactanos" element={<ReachUs />} />
-      </Routes>
+      <header className="topHeader">
+        <Header />
+        <NavBar />
+      </header>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Mision" element={<Mision />} />
+          <Route path="/Testimonios" element={<Testimonios />} />
+          <Route path="/Aliados" element={<Aliados />} />
+          <Route path="/Voluntarios" element={<Voluntarios />} />
+          <Route path="/ConsejosVerdes" element={<ConsejosVerdes />} />
+          <Route path="/Donaciones" element={<Donaciones />} />
+          <Route path="/FAQ" element={<FAQ />} />
+          <Route path="/Redes" element={<Redes />} />
+          <Route path="/Contactanos" element={<Contactanos />} />
+        </Routes>
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default App;

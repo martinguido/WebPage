@@ -1,19 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { App } from "./App.js";
-import Contactanos from "./components/Contactanos.js";
+import App from "./App.js";
 import "./css/Components.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    {/* <BrowserRouter> */}
-    <Contactanos />
-    {/* </BrowserRouter> */}
-  </React.StrictMode>,
-  document.getElementById("root")
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
