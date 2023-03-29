@@ -10,23 +10,23 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @EntityScan
-public class Voluntario {
+public class Subscriptors {
     @Id
-    @Column(name = "ID_SUBSCRIPCION")
+    @Column(name = "ID_SUBSCRIPTION")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="NOMBRE",nullable = false)
-    private String nombre;
+    @Column(name="NAME",nullable = false)
+    private String name;
 
     @Column(name="MAIL",nullable = false)
     private String mail;
-    @Column(name="FECHA_SUBSCRIPCION",nullable = false)
-    private LocalDate fechaSubscripcion;
+    @Column(name="SUBSCRIPTION_DATE",nullable = false)
+    private LocalDate subscriptionDate;
 
-    public Voluntario(String nombre, String mail, LocalDate fechaSubscripcion) {
-        this.nombre = nombre;
+    public Subscriptors(String name, String mail, LocalDate subscriptionDate) {
+        this.name = name;
         this.mail = mail;
-        this.fechaSubscripcion = fechaSubscripcion;
+        this.subscriptionDate = subscriptionDate;
     }
 
     public Long getId() {
@@ -37,12 +37,12 @@ public class Voluntario {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getMail() {
@@ -53,34 +53,34 @@ public class Voluntario {
         this.mail = mail;
     }
 
-    public LocalDate getFechaSubscripcion() {
-        return fechaSubscripcion;
+    public LocalDate getSubscriptionDate() {
+        return subscriptionDate;
     }
 
-    public void setFechaSubscripcion(LocalDate fechaSubscripcion) {
-        this.fechaSubscripcion = fechaSubscripcion;
+    public void setSubscriptionDate(LocalDate subscriptionDate) {
+        this.subscriptionDate = subscriptionDate;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Voluntario that = (Voluntario) o;
-        return id.equals(that.id) && nombre.equals(that.nombre) && mail.equals(that.mail) && fechaSubscripcion.equals(that.fechaSubscripcion);
+        Subscriptors that = (Subscriptors) o;
+        return id.equals(that.id) && name.equals(that.name) && mail.equals(that.mail) && subscriptionDate.equals(that.subscriptionDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, mail, fechaSubscripcion);
+        return Objects.hash(id, name, mail, subscriptionDate);
     }
 
     @Override
     public String toString() {
-        return "Voluntarios{" +
+        return "Subscriptors{" +
                 "id=" + id +
-                ", nombre='" + nombre + '\'' +
+                ", name='" + name + '\'' +
                 ", mail='" + mail + '\'' +
-                ", fechaSubscripcion=" + fechaSubscripcion +
+                ", subscriptionDate=" + subscriptionDate +
                 '}';
     }
 }

@@ -59,11 +59,11 @@ const NavBar = () => {
                   FAQ
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/Redes" className="links">
                   Redes
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/Contactanos" className="links">
                   Contactanos

@@ -15,12 +15,14 @@ const Mision = () => {
             y restauración de áreas degradadas y deforestadas en todo el mundo,
             promoviendo la biodiversidad y el equilibrio ecológico.
           </p>
+          <br />
           <p className="misionText1">
             Trabajamos con comunidades locales, gobiernos y otros actores
             relevantes para implementar proyectos de reforestación sostenibles y
             de largo plazo, que incluyen la capacitación y el empoderamiento de
             las comunidades locales en la gestión y cuidado de los bosques.
           </p>
+          <br />
           <p className="misionText1">
             Además, trabajamos en la promoción de políticas públicas y la
             conciencia ambiental para reducir la deforestación y promover la
@@ -30,7 +32,7 @@ const Mision = () => {
             Nuestro objetivo final es contribuir a la mitigación del cambio
             climático y la conservación de la naturaleza para las generaciones
             presentes y futuras.
-          </p>
+          </p>Ï
         </div>
         <div className="mision2">
           <h2 className="misionSubtitle">Vision</h2>
@@ -40,6 +42,7 @@ const Mision = () => {
             locales estén empoderadas para la gestión sostenible de los recursos
             naturales.
           </p>
+          <br />
           <p className="misionText2">
             Queremos ser líderes en la reforestación y restauración ecológica,
             trabajando en todo el mundo para impulsar la transformación hacia
@@ -47,6 +50,7 @@ const Mision = () => {
             reducir la huella de carbono de la humanidad y mitigar los efectos
             del cambio climático.
           </p>
+          <br />
           <p className="misionText2">
             Además, queremos ser un ejemplo de una organización que integra el
             enfoque de género y la inclusión social en todas nuestras acciones y
@@ -62,11 +66,13 @@ const Mision = () => {
             desarrollo de un mundo mejor en pos de las generaciones actuales y
             futuras.
           </p>
+          <br />
           <p className="misionText3">
             Mejorar la calidad del hábitat de las instituciones y los espacios
             verdes circundantes mediante la valorización y la plantación de
             distintas especies forestales y plantas nativas.
           </p>
+          <br />
           <p className="misionText3">
             Promover la difusión y comunicación de las experiencias a nivel
             institucional y en medios de comunicación.

@@ -9,25 +9,43 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @EntityScan
-public class Consulta {
+public class Request {
 
     @Id
-    @Column(name = "ID_CONSULTA")
+    @Column(name = "ID_REQUEST")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name= "NOMBRE", nullable = false)
-    private String nombre;
+    @Column(name= "NAME", nullable = false)
+    private String name;
 
     @Column(name = "MAIL", nullable = false)
     private String mail;
 
-    @Column(name="CONSULTA", columnDefinition = "text")
-    private String consulta;
-    @Column(name="FECHA_CONSULTA",nullable = false)
-    private LocalDate fechaConsulta;
+    @Column(name="REQUEST", columnDefinition = "text")
+    private String request;
+    @Column(name="REQUEST_DATE",nullable = false)
+    private LocalDate requestDate;
 
-    public Consulta() {
+    public Request(Long id, String name, String mail, String request, LocalDate requestDate) {
+        this.id = id;
+        this.name = name;
+        this.mail = mail;
+        this.request = request;
+        this.requestDate = requestDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Request request1 = (Request) o;
+        return id.equals(request1.id) && name.equals(request1.name) && mail.equals(request1.mail) && request.equals(request1.request) && requestDate.equals(request1.requestDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, mail, request, requestDate);
     }
 
     public Long getId() {
@@ -38,20 +56,12 @@ public class Consulta {
         this.id = id;
     }
 
-    public LocalDate getFechaConsulta() {
-        return fechaConsulta;
+    public String getName() {
+        return name;
     }
 
-    public void setFechaConsulta(LocalDate fechaConsulta) {
-        this.fechaConsulta = fechaConsulta;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getMail() {
@@ -62,42 +72,30 @@ public class Consulta {
         this.mail = mail;
     }
 
-    public String getConsulta() {
-        return consulta;
+    public String getRequest() {
+        return request;
     }
 
-    public void setConsulta(String consulta) {
-        this.consulta = consulta;
+    public void setRequest(String request) {
+        this.request = request;
     }
 
-    public Consulta(String nombre, String mail, String consulta, LocalDate fechaConsulta) {
-        this.nombre = nombre;
-        this.mail = mail;
-        this.consulta = consulta;
-        this.fechaConsulta = fechaConsulta;
+    public LocalDate getRequestDate() {
+        return requestDate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Consulta consulta = (Consulta) o;
-        return id.equals(consulta.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public void setRequestDate(LocalDate requestDate) {
+        this.requestDate = requestDate;
     }
 
     @Override
     public String toString() {
-        return "Consulta{" +
+        return "Request{" +
                 "id=" + id +
-                ", fechaConsulta=" + fechaConsulta +
-                ", nombre='" + nombre + '\'' +
+                ", name='" + name + '\'' +
                 ", mail='" + mail + '\'' +
-                ", consulta='" + consulta + '\'' +
+                ", request='" + request + '\'' +
+                ", requestDate=" + requestDate +
                 '}';
     }
 }
