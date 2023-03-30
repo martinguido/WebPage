@@ -6,6 +6,7 @@
 @import "Mision.css";
 @import "Contactanos.css";
 @import "App.css";
+@import "Home.css";
 
 .start {
   display: flex;
