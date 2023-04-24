@@ -5,11 +5,21 @@ const Contactanos = () => {
   const [mail, setMail] = useState("");
   const [consulta, setConsulta] = useState("");
 
+  const postData = () => {
+    try {
+      const data = { name: nombre, mail: mail, request: consulta, date: new Date() }
+    }
+    catch {
+
+    }
+
+  }
+
   return (
     <div className="cForm">
-      <div className="contactForm">
+      <div className="contactForm" onSubmit={postData}>
         <span className="heading">Contact Us</span>
-        <form onSubmit={this.handleSubmit}>
+        <form >
           <label for="name">Nombre:</label>
           <input
             type="text"
