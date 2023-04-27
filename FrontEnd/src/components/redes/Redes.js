@@ -1,8 +1,8 @@
 import React from "react";
-import logoFB from "../img/logoFB.png";
-import logoTW from "../img/logoTW.png";
-import logoLI from "../img/logoLI.png";
-import logoIG from "../img/logoIG.png";
+import logoFB from "./logoFB.png";
+import logoTW from "./logoTW.png";
+import logoLI from "./logoLI.png";
+import logoIG from "./logoIG.png";
 
 const Redes = () => {
   return (

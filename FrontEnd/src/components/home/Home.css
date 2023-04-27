@@ -19,13 +19,13 @@ html {
   background-size: cover;
 }
 .bgHome__1 {
-  background-image: url("../img/home1.jpeg");
+  background-image: url("./home1.jpeg");
 }
 .bgHome__2 {
-  background-image: url("../img/home3.jpeg");
+  background-image: url("./home3.jpeg");
 }
 .bgHome__3 {
-  background-image: url("../img/home4.jpeg");
+  background-image: url("./home4.jpeg");
 }
 .glass {
   display: flex;

@@ -15,7 +15,7 @@ public class RequestService {
     public List<Request> getAllRequests(){
         return requestRepository.findAll();
     }
-    public void createRegion(RequestDTO requestDTO) {
+    public void createRequest(RequestDTO requestDTO) {
         Request aNewRequest = new Request(requestDTO.getName(), requestDTO.getMail(), requestDTO.getRequest(), requestDTO.getRequestDate());
         requestRepository.save(aNewRequest);
     }

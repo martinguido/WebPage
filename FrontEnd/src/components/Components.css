@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
 @import "Footer.css";
-@import "ModalNewsletter.css";
-@import "Header.css";
-@import "NavBar.css";
-@import "Mision.css";
-@import "Contactanos.css";
-@import "App.css";
-@import "Home.css";
+@import "./modalNewsletter/ModalNewsletter.css";
+@import "./header/Header.css";
+@import "./navBar/NavBar.css";
+@import "./mision/Mision.css";
+@import "./contactanos/Contactanos.css";
+@import "./app/App.css";
+@import "./home/Home.css";
 
 .start {
   display: flex;

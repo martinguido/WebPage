@@ -59,13 +59,13 @@
 }
 
 .mision1 {
-  background-image: url("../img/mision1.jpg");
+  background-image: url("./mision1.jpg");
 }
 .mision2 {
-  background-image: url("../img/mision2.jpg");
+  background-image: url("./mision2.jpg");
 }
 .mision3 {
-  background-image: url("../img/mision3.jpg");
+  background-image: url("./mision3.jpg");
 }
 .misionTitle {
   color: blanchedalmond;

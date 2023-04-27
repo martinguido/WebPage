@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RequestController {
     private RequestService requestService;
     public RequestController(RequestService requestService) {
@@ -21,9 +22,14 @@ public class RequestController {
         return new ResponseEntity<>( allRequests, HttpStatus.OK);
     }
     @PostMapping("/consultas/enviarConsulta")
-    public ResponseEntity<RequestDTO> createRequest(@RequestBody RequestDTO newRequestDTO ){
-        System.out.println(newRequestDTO);
-        requestService.createRegion(newRequestDTO);
-        return new ResponseEntity<>(newRequestDTO, HttpStatus.OK);
+    public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO ) throws Exception{
+        try {
+            requestService.createRequest(newRequestDTO);
+            return new ResponseEntity<>(newRequestDTO, HttpStatus.OK);
+        }
+        catch (Error e) {
+            System.out.println(e);
+            return new ResponseEntity<>("No se pudo enviar la consulta correctamente. Reintentar.",HttpStatus.BAD_REQUEST);
+        }
     }
 }

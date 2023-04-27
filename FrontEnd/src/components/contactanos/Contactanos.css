@@ -75,3 +75,9 @@
   transform: scale(1.01);
   transition: transform 0.3s ease-in-out;
 }
+
+.inputValidation {
+  color: red;
+  font-weight: 600;
+  padding-left: 2.5%;
+}

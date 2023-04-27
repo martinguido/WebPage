@@ -1,17 +1,17 @@
 import React from "react";
 
-import Home from "./Home.js";
-import Header from "./Header.js";
-import NavBar from "./NavBar.js";
-import Mision from "./Mision.js";
-import Testimonios from "./Testimonios.js";
-import Aliados from "./Aliados.js";
-import Voluntarios from "./Voluntarios.js";
-import ConsejosVerdes from "./ConsejosVerdes";
-import Donaciones from "./Donaciones.js";
-import FAQ from "./FAQ.js";
-import Redes from "./Redes.js";
-import Contactanos from "./Contactanos.js";
+import Home from "../home/Home.js";
+import Header from "../header/Header.js";
+import NavBar from "../navBar/NavBar.js";
+import Mision from "../mision/Mision.js";
+import Testimonios from "../testimonios/Testimonios.js";
+import Aliados from "../aliados/Aliados.js";
+import Voluntarios from "../voluntarios/Voluntarios.js";
+import ConsejosVerdes from "../consejosVerdes/ConsejosVerdes";
+import Donaciones from "../donaciones/Donaciones.js";
+import FAQ from "../faq/FAQ.js";
+import Redes from "../redes/Redes.js";
+import Contactanos from "../contactanos/Contactanos.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
