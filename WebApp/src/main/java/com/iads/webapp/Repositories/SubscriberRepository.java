@@ -1,9 +1,8 @@
-package com.arbolar.WebApp.Repositories;
+package com.iads.webapp.Repositories;
 
-import com.arbolar.WebApp.DAOs.Subscriber;
+import com.iads.webapp.DAOs.Subscriber;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 @Repository
 public interface SubscriberRepository extends CrudRepository<Subscriber, Long> {

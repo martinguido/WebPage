@@ -1,6 +1,7 @@
-package com.arbolar.WebApp.DAOs;
+package com.iads.webapp.DAOs;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 import jakarta.persistence.*;
@@ -24,7 +25,7 @@ public class Request {
     private String request;
 
     @Column(name="REQUEST_DATE",nullable = false)
-    private LocalDate requestDate;
+    private Date requestDate;
 
     public Long getId() {
         return id;
@@ -58,19 +59,18 @@ public class Request {
         this.request = request;
     }
 
-    public LocalDate getRequestDate() {
+    public Date getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(LocalDate requestDate) {
+    public void setRequestDate(Date requestDate) {
         this.requestDate = requestDate;
     }
 
     public Request() {
     }
 
-    public Request(Long id, String name, String mail, String request, LocalDate requestDate) {
-        this.id = id;
+    public Request(String name, String mail, String request, Date requestDate) {
         this.name = name;
         this.mail = mail;
         this.request = request;

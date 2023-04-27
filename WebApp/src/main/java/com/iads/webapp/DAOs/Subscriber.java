@@ -1,7 +1,7 @@
-package com.arbolar.WebApp.DAOs;
+package com.iads.webapp.DAOs;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -20,7 +20,7 @@ public class Subscriber {
     private String mail;
 
     @Column(name="SUBSCRIPTION_DATE",nullable = false)
-    private LocalDate subscriptionDate;
+    private Date subscriptionDate;
 
     public Long getId() {
         return id;
@@ -46,19 +46,18 @@ public class Subscriber {
         this.mail = mail;
     }
 
-    public LocalDate getSubscriptionDate() {
+    public Date getSubscriptionDate() {
         return subscriptionDate;
     }
 
-    public void setSubscriptionDate(LocalDate subscriptionDate) {
+    public void setSubscriptionDate(Date subscriptionDate) {
         this.subscriptionDate = subscriptionDate;
     }
 
     public Subscriber() {
     }
 
-    public Subscriber(Long id, String name, String mail, LocalDate subscriptionDate) {
-        this.id = id;
+    public Subscriber(String name, String mail, Date subscriptionDate) {
         this.name = name;
         this.mail = mail;
         this.subscriptionDate = subscriptionDate;

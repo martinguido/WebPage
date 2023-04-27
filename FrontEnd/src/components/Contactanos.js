@@ -10,9 +10,7 @@ const Contactanos = () => {
       const data = { name: nombre, mail: mail, request: consulta, date: new Date() }
     }
     catch {
-
     }
-
   }
 
   return (
