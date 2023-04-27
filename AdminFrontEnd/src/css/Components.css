@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+@import "Footer.css";
+@import "ModalNewsletter.css";
+@import "Header.css";
+@import "NavBar.css";
+@import "Mision.css";
+@import "Contactanos.css";
+@import "App.css";
+@import "Home.css";
+
+.start {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background: #cad3db;
+  font-family: "Mulish", sans-serif;
+}
