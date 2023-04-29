@@ -1,80 +1,51 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from "../header/IADS.png";
 const NavBar = () => {
-  return (
-    <div className="navBar">
-      <nav className="dropDownMenu">
-        <ul>
-          <li>
-            <Link to="/" className="links">
-              Home
-            </Link>
-          </li>
-          <li>
-            <h1 className="mainH1">Conocenos</h1>
-            <ul id="subMenu">
-              <li>
-                <Link to="/Mision" className="links">
-                  Mision
-                </Link>
-              </li>
-              <li>
-                <Link to="/Testimonios" className="links">
-                  Testimonios
-                </Link>
-              </li>
-              <li>
-                <Link to="/Aliados" className="links">
-                  Aliados
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h1 className="mainH1">Actividades</h1>
-            <ul id="subMenu">
-              <li>
-                <Link to="/Voluntarios" className="links">
-                  Voluntarios
-                </Link>
-              </li>
-              <li>
-                <Link to="/ConsejosVerdes" className="links">
-                  Consejos Verdes
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link to="/Donaciones" className="links">
-              Donaciones
-            </Link>
-          </li>
-          <li>
-            <h1 className="mainH1">Contactanos</h1>
-            <ul id="subMenu">
-              <li>
-                <Link to="/FAQ" className="links">
-                  FAQ
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/Redes" className="links">
-                  Redes
-                </Link>
-              </li> */}
-              <li>
-                <Link to="/Contactanos" className="links">
-                  Contactanos
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
+    return (
+        // <Navbar expand="lg" fixed="sticky" className="navBar">
+        <Navbar expand="lg" bg="dark" variant="dark" fixed="sticky" className="navBar">
+            <Container fluid className="cajita">
+                <Navbar.Brand href="/">
+                    <img
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                        alt="React Bootstrap logo"
+                    />
+                    IADS
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <NavDropdown title="Conocenos" id="navbarScrollingDropdown" >
+                            <NavDropdown.Item href="/Mision">Mision</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/Testimonios">Testimonios</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/Aliados">Aliados</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Actividades" id="navbarScrollingDropdown" >
+                            <NavDropdown.Item href="/Voluntarios">Voluntarios</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/ConsejosVerdes">Consejos Verdes</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link href="/Donaciones">Donaciones</Nav.Link>
+                        <NavDropdown title="Contactanos" id="navbarScrollingDropdown">
+                            <NavDropdown.Item href="/FAQ">FAQ</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/Contactanos">Dejanos tu consulta</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 };
 
 export default NavBar;

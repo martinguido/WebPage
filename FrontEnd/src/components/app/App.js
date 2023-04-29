@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
+import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js"
 import Home from "../home/Home.js";
 import Header from "../header/Header.js";
 import NavBar from "../navBar/NavBar.js";
@@ -15,28 +16,38 @@ import Contactanos from "../contactanos/Contactanos.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
+  const [viewModal, setViewModal] = useState(false);
+  // useEffect(() => {
+  //   setInterval(handlerViewModal(), 400);
+  // })
+  // const handlerViewModal = () => {
+  //   setViewModal(true);
+  // }
   return (
     <div>
-      <header className="topHeader">
+      {/* {setViewModal ? <ModalNewsletter viewModal={viewModal} /> : null} */}
+      <div >
         <Header />
-        <NavBar />
-      </header>
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Mision" element={<Mision />} />
-          <Route path="/Testimonios" element={<Testimonios />} />
-          <Route path="/Aliados" element={<Aliados />} />
-          <Route path="/Voluntarios" element={<Voluntarios />} />
-          <Route path="/ConsejosVerdes" element={<ConsejosVerdes />} />
-          <Route path="/Donaciones" element={<Donaciones />} />
-          <Route path="/FAQ" element={<FAQ />} />
-          <Route path="/Contactanos" element={<Contactanos />} />
-        </Routes>
+        <header className="topHeader">
+          <NavBar />
+        </header>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Mision" element={<Mision />} />
+            <Route path="/Testimonios" element={<Testimonios />} />
+            <Route path="/Aliados" element={<Aliados />} />
+            <Route path="/Voluntarios" element={<Voluntarios />} />
+            <Route path="/ConsejosVerdes" element={<ConsejosVerdes />} />
+            <Route path="/Donaciones" element={<Donaciones />} />
+            <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/Contactanos" element={<Contactanos />} />
+          </Routes>
+        </div>
+        <footer>
+          <Redes />
+        </footer>
       </div>
-      <footer>
-        <Redes />
-      </footer>
     </div>
   );
 };

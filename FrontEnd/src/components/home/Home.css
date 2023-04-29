@@ -3,7 +3,9 @@ html {
   background-color: #252525;
   height: 100%;
 }
-
+.start{
+  background-color: #212529;
+}
 .bgHome__1,
 .bgHome__2,
 .bgHome__3 {

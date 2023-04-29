@@ -3,4 +3,8 @@
     width: 100%;
     flex-direction: column;
     justify-content: center;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: #252525;
 }

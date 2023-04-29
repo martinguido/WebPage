@@ -1,6 +1,10 @@
 import React from "react";
 
+
+
 const Home = () => {
+
+
   return (
     <div className="start">
       <div className="bgHome__1">
@@ -19,6 +23,8 @@ const Home = () => {
           <h1 className="homeTitle">Sustentabilidad</h1>
         </div>
       </div>
+      
+
     </div >
   );
 };

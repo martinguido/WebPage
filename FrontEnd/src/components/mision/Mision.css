@@ -13,7 +13,7 @@
 }
 .secMision {
   display: flex;
-  width: 75%;
+  width: 85%;
   height: 650px;
 }
 .mision1,
@@ -39,36 +39,36 @@
 .mision1:hover > .misionText1 {
   /* display: inline-block; */
   height: 100px;
-  transition: 1s ease;
+  transition: all 0.8s ease;
   visibility: visible;
   opacity: 1;
 }
 .mision2:hover > .misionText2 {
   /* display: inline-block; */
   height: 100px;
-  transition: 1s ease;
+  transition: all 0.8s ease;
   visibility: visible;
   opacity: 1;
 }
 .mision3:hover > .misionText3 {
   /* display: inline-block; */
   height: 100px;
-  transition: all 2s ease;
+  transition: all 0.8s ease;
   visibility: visible;
   opacity: 1;
 }
 
 .mision1 {
-  background-image: url("./mision1.jpg");
+  background-image: url("mision1.jpg");
 }
 .mision2 {
-  background-image: url("./mision2.jpg");
+  background-image: url("mision2.jpg");
 }
 .mision3 {
-  background-image: url("./mision3.jpg");
+  background-image: url("mision3.jpg");
 }
 .misionTitle {
-  color: blanchedalmond;
+  color: white;
   font-weight: 400;
 }
 .misionSubtitle {

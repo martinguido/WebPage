@@ -1,35 +1,47 @@
 .header {
   background-color: green;
-  padding-bottom: 35px;
-  margin-bottom: 5px;
-}
-.logoA {
-  width: 70px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.logoHeader {
-  display: block;
+  display: flex;
+  justify-content: center;
+  height: 120px;
   width: 100%;
-  height: 300px;
-  text-align: right;
-  padding-right: 350px;
+  background-image: url("./header3.png");
+  background-color: #252525;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
-
-.blurred {
-  -webkit-filter: blur(100px);
-  -moz-filter: blur(100px);
-  -o-filter: blur(100px);
-  -ms-filter: blur(100px);
-  filter: blur(100px);
+.subHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(16, 16, 16, 0.23);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
 }
-
-.blurred,
-.logoA {
-  position: absolute;
-  width: 300px;
-  border-radius: 100%;
-  margin-top: 20px;
-  margin-right: 300px;
+.headerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+.headerTitle h1 {
+  padding-left: 7%;
+  color: whitesmoke;
+  font-weight: 500;
+  font-family: "Helvetica Neue";
+}
+.logoHeader {
+  /* align-self: flex-end ; */
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+.logoIADS {
+  padding-right: 7.5%;
+  width: 10vw;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  /* mix-blend-mode: color-burn; */
 }

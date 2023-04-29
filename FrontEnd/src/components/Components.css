@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
-@import "Footer.css";
+@import "./redes/Redes.css";
 @import "./modalNewsletter/ModalNewsletter.css";
 @import "./header/Header.css";
 @import "./navBar/NavBar.css";
@@ -14,6 +14,8 @@
 }
 
 body {
-  background: #cad3db;
+  background-color: #252525;
+  background: #252525;
   font-family: "Mulish", sans-serif;
 }
+
