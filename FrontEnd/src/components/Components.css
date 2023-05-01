@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap"); */
 @import "./redes/Redes.css";
 @import "./modalNewsletter/ModalNewsletter.css";
 @import "./header/Header.css";
@@ -8,13 +8,24 @@
 @import "./app/App.css";
 @import "./home/Home.css";
 
+:root {
+  --brand-primary: #252525;
+  --brand-text: #fff;
+  --brand-dark: #fff;
+  --brand-light: #fff;
+  --brand-grey: #344;
+}
+
+
 .start {
   display: flex;
   flex-direction: column;
 }
 
 body {
-  background-color: #252525;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--brand-primary);
   background: #252525;
   font-family: "Mulish", sans-serif;
 }

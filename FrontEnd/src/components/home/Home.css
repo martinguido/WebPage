@@ -9,7 +9,6 @@ html {
 .bgHome__1,
 .bgHome__2,
 .bgHome__3 {
-  margin-top: 15px;
   background-color: #252525;
   height: 100vh;
   display: flex;
@@ -25,9 +24,11 @@ html {
 }
 .bgHome__2 {
   background-image: url("./home3.jpeg");
+  margin-top: 15px;
 }
 .bgHome__3 {
   background-image: url("./home4.jpeg");
+  margin-top: 15px;
 }
 .glass {
   display: flex;

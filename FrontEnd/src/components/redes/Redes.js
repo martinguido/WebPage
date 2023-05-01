@@ -1,28 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logoLI from "./logoLI.png";
 import logoFB from "./logoFB.png";
-import logoGM from "./logoGM.png";
+import logoGM from "./logoMail.png";
 import logoWP from "./logoWP.png";
+import logoIADS from "../header/IADS.png";
 
 const Redes = () => {
+  const [showLogo, setShowLogo] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+    function handleScroll() {
+      if (window.scrollY + window.innerHeight > document.documentElement.scrollHeight - 100) {
+        setShowLogo(true);
+      } else if (showLogo && window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 150) {
+        setShowLogo(false);
+      }
+    }
+  }, [showLogo]);
+
   return (
-    <div className="footer">
-      <h1 className="footerTitle">Seguinos!</h1>
-      <div className="footerlogos">
-        <a href="https://www.linkedin.com/company/iads---instituto-argentino-para-el-desarrollo-sustentable/about/" target="_blank" rel="noreferrer">
-          <img src={logoLI} alt="Logo de LinkedIn" className="logo" />
-        </a>
-        <a href="https://www.facebook.com/IADSADMIN/" target="_blank" rel="noreferrer">
-          <img src={logoFB} alt="Logo de Facebook" className="logo" />
-        </a>
-        <a href="mailto: info@iadsargentina.org" target="_blank" rel="noreferrer">
-          <img src={logoGM} alt="Logo de Mail" className="logo" />
-        </a>
-        <a href="https://wa.me/1568837530" target="_blank" rel="noreferrer">
-          <img src={logoWP} alt="Logo de Whatsapp" className="logo" />
-        </a >
-      </div >
-    </div >
+    <footer className="footerNetworks">
+      <div className={`divNetworksEffects ${showLogo ? 'show' : ''}`}>
+        <div className="divNetworks">
+          <img src={logoIADS} alt="Logo IADS" className="logoNetworksIADS" />
+        </div>
+        <h1 className="footerNetworksTitle">Seguinos!</h1>
+        <div className="footerNetworksLogos">
+          <a href="https://www.linkedin.com/company/iads---instituto-argentino-para-el-desarrollo-sustentable/about/" target="_blank" rel="noreferrer">
+            <img src={logoLI} alt="Logo de LinkedIn" className="logoNetworks" />
+          </a>
+          <a href="https://www.facebook.com/IADSADMIN/" target="_blank" rel="noreferrer">
+            <img src={logoFB} alt="Logo de Facebook" className="logoNetworks" />
+          </a>
+          <a href="mailto: info@iadsargentina.org" target="_blank" rel="noreferrer">
+            <img src={logoGM} alt="Logo de Mail" className="logoNetworks" />
+          </a>
+          <a href="https://wa.me/1568837530" target="_blank" rel="noreferrer">
+            <img src={logoWP} alt="Logo de Whatsapp" className="logoNetworks" />
+          </a >
+        </div >
+      </div>
+    </footer >
   );
 };
 
