@@ -1,0 +1,40 @@
+.aliadosDiv {
+  align-items: center;
+  background-color: var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
+.aliadosTitle {
+  color: var(--brand-text);
+  padding: 25px 5px 0px 0px;
+}
+.aliadosLogos {
+  align-items: space-evenly;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: space-evenly;
+}
+.aliadosLogosFirstRow,
+.aliadosLogosSecondRow {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+.aliadosLogo {
+  -webkit-filter: grayscale(100%);
+  aspect-ratio: 4/3;
+  border-radius: 20px 20px 0px 20px;
+  filter: grayscale(100%);
+  object-fit: contain;
+  transition: all 1s ease;
+  width: 25vw;
+}
+.aliadosLogo:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transition: all 1s ease;
+}

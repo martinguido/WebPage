@@ -1,0 +1,23 @@
+.consejos {
+  align-items: center;
+  background-color: var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
+.consejosDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.consejosDivRow {
+  align-items: space-evenly;
+  display: flex;
+  flex-direction: row;
+  height: 35vh;
+  justify-content: space-evenly;
+  margin-bottom: 35px;
+  width: 100vw;
+}

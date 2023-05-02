@@ -4,7 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from "../header/IADS.png";
+
 const NavBar = () => {
+
     return (
         <Navbar expand="lg" bg="dark" variant="dark" fixed="sticky" className="navBar">
             <Container fluid className="cajita">
@@ -17,7 +19,7 @@ const NavBar = () => {
                     />
                     <h1 className="brandH1">I A D S</h1>
                 </Navbar.Brand>
-                
+
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>

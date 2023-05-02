@@ -1,32 +1,31 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap"); */
-@import "./redes/Redes.css";
-@import "./modalNewsletter/ModalNewsletter.css";
-@import "./header/Header.css";
-@import "./navBar/NavBar.css";
-@import "./mision/Mision.css";
-@import "./contactanos/Contactanos.css";
+@import "./aliados/Aliados.css";
 @import "./app/App.css";
+
+@import "./contactanos/Contactanos.css";
+
+
+@import "./header/Header.css";
 @import "./home/Home.css";
+@import "./mision/Mision.css";
+@import "./modalNewsletter/ModalNewsletter.css";
+@import "./navBar/NavBar.css";
+@import "./redes/Redes.css";
+@import "./consejosVerdes/ConsejosVerdes.css";
+@import "./consejosVerdes/cardConsejos/CardConsejos.css";
 
 :root {
   --brand-primary: #252525;
   --brand-text: #fff;
-  --brand-dark: #fff;
-  --brand-light: #fff;
-  --brand-grey: #344;
+  --brand-error-text: #ff2626;
+  --brand-border: #27FB6B;
 }
-
 
 .start {
   display: flex;
   flex-direction: column;
 }
-
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: var(--brand-primary);
-  background: #252525;
   font-family: "Mulish", sans-serif;
+  width: 100vw;
 }
-

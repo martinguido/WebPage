@@ -1,0 +1,29 @@
+.card {
+  align-items: center;
+  background: linear-gradient(180deg, #34e89e 0%, #a8ff78 100%);
+  border: 5px solid var(--brand-text);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 2% 5%;
+  text-align: center;
+  transition: all 0.5s;
+  user-select: none;
+  width: 17vw;
+}
+.card:hover {
+  border: 1px solid var(--brand-border);
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+.cardTitle {
+  font-size: larger;
+  font-weight: 700;
+}
+.cardText {
+  font-size: medium;
+  font-weight: 400;
+}

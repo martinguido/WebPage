@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js"
+// import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js"
 import Home from "../home/Home.js";
 import Header from "../header/Header.js";
 import NavBar from "../navBar/NavBar.js";
@@ -16,6 +15,7 @@ import Contactanos from "../contactanos/Contactanos.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
+
   const [viewModal, setViewModal] = useState(false);
   // useEffect(() => {
   //   setInterval(handlerViewModal(), 400);
@@ -28,7 +28,7 @@ const App = () => {
       {/* {setViewModal ? <ModalNewsletter viewModal={viewModal} /> : null} */}
       <div >
         <Header />
-        <header className="topHeader">
+        <header className="appHeader">
           <NavBar />
         </header>
         <div>

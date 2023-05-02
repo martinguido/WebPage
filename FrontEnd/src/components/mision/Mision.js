@@ -1,6 +1,7 @@
 import React from "react";
 
 const Mision = () => {
+
   return (
     <div className="mision">
       <h1 className="misionTitle">

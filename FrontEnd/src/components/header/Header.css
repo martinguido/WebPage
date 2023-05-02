@@ -1,47 +1,43 @@
 .header {
-  background-color: green;
-  display: flex;
-  justify-content: center;
-  height: 120px;
-  width: 100%;
-  background-image: url("./header3.png");
   background-color: #252525;
+  background-image: url("./header3.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  height: 120px;
+  justify-content: center;
   position: relative;
-}
-.subHeader {
   width: 100%;
+}
+.headerDiv {
+  align-items: center;
+  backdrop-filter: blur(7.6px);
+  background: rgba(16, 16, 16, 0.23);
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: rgba(16, 16, 16, 0.23);
-  backdrop-filter: blur(7.6px);
-  -webkit-backdrop-filter: blur(7.6px);
+  width: 100%;
 }
 .headerTitle {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex: 2;
-}
-.headerTitle h1 {
-  padding-left: 7%;
-  color: whitesmoke;
-  font-weight: 500;
-  font-family: "Helvetica Neue";
-}
-.logoHeader {
-  /* align-self: flex-end ; */
   display: flex;
-  justify-content: flex-end;
+  flex: 2;
+  justify-content: center;
+}
+.headerH1 {
+  color: whitesmoke;
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  padding-left: 7%;
+}
+.headerLogo {
+  display: flex;
   flex: 1;
+  justify-content: flex-end;
 }
 .logoIADS {
-  padding-right: 7.5%;
-  width: 10vw;
   aspect-ratio: 1/1;
   object-fit: contain;
-  /* mix-blend-mode: color-burn; */
+  padding-right: 7.5%;
+  width: 10vw;
 }

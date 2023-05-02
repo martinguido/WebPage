@@ -1,45 +1,43 @@
-.footerNetworks {
+.redesFooter {
   background-color: var(--brand-primary);
   padding: 3vh 0vw;
   width: 100vw;
 }
-.divNetworksEffects {
+.redesDivEffects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   transform: translateY(50px);
   transition: transform, opacity;
   transition-duration: 0.8s;
   transition-timing-function: ease;
 }
-.divNetworksEffects.show {
+.redesDivEffects.show {
   opacity: 1;
   transform: translateY(0);
 }
-.divNetworks {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
-.logoNetworksIADS {
+.redesFooterLogoIADS {
   aspect-ratio: 1/1;
   object-fit: contain;
   width: 10vw;
 }
-.footerNetworksTitle {
+.redesFooterTitle {
   align-self: center;
   color: var(--brand-text);
   display: flex;
   justify-content: center;
   width: 100vw;
 }
-.footerNetworksLogos {
+.redesLogos {
   justify-content: center;
   align-self: center;
   display: flex;
   padding-top: 1%;
   width: 100vw;
 }
-.logoNetworks {
+.redesLogo {
   aspect-ratio: 1/1;
   margin: 0% 2vw;
   width: 5vw;

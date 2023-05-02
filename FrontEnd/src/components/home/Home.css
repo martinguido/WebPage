@@ -1,47 +1,42 @@
-body,
-html {
-  background-color: #252525;
-  height: 100%;
+
+.home{
+  background-color: var(--brand-primary);
 }
-.start{
-  background-color: #212529;
-}
-.bgHome__1,
-.bgHome__2,
-.bgHome__3 {
-  background-color: #252525;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+.imgHome1,
+.imgHome2,
+.imgHome3 {
   align-items: center;
+  background-color: var(--brand-primary);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.bgHome__1 {
+.imgHome1 {
   background-image: url("./home1.jpeg");
 }
-.bgHome__2 {
+.imgHome2 {
   background-image: url("./home3.jpeg");
-  margin-top: 15px;
+  margin-top: 1.5%;
 }
-.bgHome__3 {
+.imgHome3 {
   background-image: url("./home4.jpeg");
-  margin-top: 15px;
+  margin-top: 1.5%;
 }
-.glass {
+.homeGlass {
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
   height: 25%;
-  background: rgba(0, 0, 0, 0.16);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2.9px);
-  -webkit-backdrop-filter: blur(2.9px);
+  width: 100%;
 }
 .homeTitle {
+  color: var(--brand-text);
   font-family: "Euclid Circular A";
 }
