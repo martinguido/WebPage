@@ -5,7 +5,7 @@ import logoGM from "./img/logoMail.png";
 import logoWP from "./img/logoWP.png";
 import logoIADS from "../header/IADS.png";
 
-const Redes = () => {
+const Redes = (props) => {
   const [showLogo, setShowLogo] = useState(false);
 
   useEffect(() => {
@@ -21,6 +21,11 @@ const Redes = () => {
       }
     }
   }, [showLogo]);
+
+  const handleModal = () => {
+    props.setViewModalState(true);
+    document.body.style.overflow = "hidden";
+  }
 
   return (
     <footer className="redesFooter">
@@ -41,6 +46,7 @@ const Redes = () => {
             <img src={logoWP} alt="Logo de Whatsapp" className="redesLogo" />
           </a >
         </div >
+        <button className="redesButton" onClick={() => handleModal()}>Quiero subscribirme al Newsletter</button>
       </div>
     </footer >
   );

@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import closeIcon from "./closeIcon.png";
 
-const ModalNewsletter = (viewModal) => {
-  
+const ModalNewsletter = (props) => {
   const [nombre, setNombre] = useState("");
   const [mail, setMail] = useState("");
   const [isNameValid, setIsNameValid] = useState(true);
   const [isMailValid, setIsMailValid] = useState(true);
-
   const submitForm = async (event) => {
-
     event.preventDefault()
     if (isNameValid && isMailValid) {
       const data = { name: nombre, mail: mail, subscriptionDate: new Date() }
@@ -51,11 +48,11 @@ const ModalNewsletter = (viewModal) => {
 
   const closeModal = () => {
     console.log("CERRANDO MODAL");
-    viewModal = false;
+    props.setViewModalState(false);
+    document.body.style.overflow = "auto";
   }
 
   return (
-
     <div className="newsletter">
       <div>
         <div className="subscribe">
@@ -93,7 +90,7 @@ const ModalNewsletter = (viewModal) => {
             </div>
           </div>
           <div className="button">
-            <button className="form__button">Subscribirme</button>
+            <button className="form__button" onClick={()=>submitForm()}>Subscribirme</button>
           </div>
         </div>
       </div>

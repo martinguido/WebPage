@@ -64,7 +64,7 @@ const Contactanos = () => {
       <div className="contactanosDiv" >
         <span className="contactanosHeading">Contactanos</span>
         <form className="contactanosForm" onSubmit={submitForm} >
-          <label lassName="contactanosFormLabel" htmlFor="name" c>Nombre:</label>
+          <label className="contactanosFormLabel" htmlFor="name" >Nombre:</label>
           <div>
             <input
               className="contactanosInput"
