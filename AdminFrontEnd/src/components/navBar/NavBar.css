@@ -1,0 +1,24 @@
+.navBar{
+    height: 10vh;
+    width: 100vw;
+}
+
+#logoNavBar{
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    width: 60px;
+}
+.brandH1{
+    color: white;
+
+    font-size: larger;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 10px;
+    text-align: center;  
+}
+.brand{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px;
+}

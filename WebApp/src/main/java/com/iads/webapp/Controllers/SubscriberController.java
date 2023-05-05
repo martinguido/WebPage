@@ -17,11 +17,13 @@ public class SubscriberController {
         this.subscriberService = subscriberService;
     }
     @GetMapping("/subscriptores")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<List<Subscriber>> getRequests(){
         List <Subscriber> allSubscribers = subscriberService.getAllSubscribers();
         return new ResponseEntity<>( allSubscribers, HttpStatus.OK);
     }
     @PostMapping("/subscriptores/subscribirse")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<SubscriberDTO> createRequest(@RequestBody SubscriberDTO newSubscriberDTO ){
         System.out.println(newSubscriberDTO);
         subscriberService.createSubscriber(newSubscriberDTO);

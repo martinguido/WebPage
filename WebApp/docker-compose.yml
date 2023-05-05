@@ -43,7 +43,7 @@ services:
       hfnet:
         ipv4_address: 192.168.25.12
     environment:
-      PGADMIN_DEFAULT_EMAIL: iads
+      PGADMIN_DEFAULT_EMAIL: iads@email.com
       PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
       - postgres-data:/etc/data

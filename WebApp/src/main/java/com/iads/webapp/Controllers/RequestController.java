@@ -17,11 +17,13 @@ public class RequestController {
         this.requestService = requestService;
     }
     @GetMapping ("/consultas")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<List<Request>> getRequests(){
         List <Request> allRequests = requestService.getAllRequests();
         return new ResponseEntity<>( allRequests, HttpStatus.OK);
     }
     @PostMapping("/consultas/enviarConsulta")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO ) throws Exception{
         try {
             requestService.createRequest(newRequestDTO);

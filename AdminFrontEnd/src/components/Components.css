@@ -1,0 +1,22 @@
+@import "./app/App.css";
+@import "./navBar/NavBar.css";
+@import "./subscriptores/Subscriptores.css";
+@import "./consultas/Consultas.css";
+
+:root {
+  --brand-primary: #252525;
+  --brand-text: #fff;
+  --brand-error-text: #ff2626;
+  --brand-border: #27FB6B;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+}
+body {
+  background-color: var(--brand-primary);
+  font-family: "Mulish", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
