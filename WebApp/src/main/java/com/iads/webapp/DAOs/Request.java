@@ -25,6 +25,9 @@ public class Request {
     @Column(name="REQUEST_DATE",nullable = false)
     private Date requestDate;
 
+    @Column(name="STATUS",nullable = false)
+    private String status;
+
     public Long getId() {
         return id;
     }
@@ -61,18 +64,29 @@ public class Request {
         return requestDate;
     }
 
-    public void setRequestDate(Date requestDate) {
-        this.requestDate = requestDate;
-    }
+    public void setRequestDate(Date requestDate) {this.requestDate = requestDate;}
+
+    public String getStatus() {return status;}
+
+    public void setStatus(String status) {this.status = status;}
 
     public Request() {
     }
 
-    public Request(String name, String mail, String request, Date requestDate) {
+    public Request(String name, String mail, String request, Date requestDate, String status) {
         this.name = name;
         this.mail = mail;
         this.request = request;
         this.requestDate = requestDate;
+        this.status = status;
+    }
+    public Request(Long id, String name, String mail, String request, Date requestDate, String status) {
+        this.id = id;
+        this.name = name;
+        this.mail = mail;
+        this.request = request;
+        this.requestDate = requestDate;
+        this.status = status;
     }
 
     @Override
@@ -80,12 +94,12 @@ public class Request {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Request request1 = (Request) o;
-        return Objects.equals(id, request1.id) && Objects.equals(name, request1.name) && Objects.equals(mail, request1.mail) && Objects.equals(request, request1.request) && Objects.equals(requestDate, request1.requestDate);
+        return Objects.equals(name, request1.name) && Objects.equals(mail, request1.mail) && Objects.equals(request, request1.request) && Objects.equals(requestDate, request1.requestDate) && Objects.equals(status, request1.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, mail, request, requestDate);
+        return Objects.hash(name, mail, request, requestDate, status);
     }
 
     @Override
@@ -96,6 +110,7 @@ public class Request {
                 ", mail='" + mail + '\'' +
                 ", request='" + request + '\'' +
                 ", requestDate=" + requestDate +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

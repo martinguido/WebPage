@@ -5,9 +5,13 @@
 }
 .consultasTitle {
   color: var(--brand-text);
-  padding: 50px;
+  height: 10vh;
+  padding-top: 2vh;
   text-align: center;
   width: 100%;
+}
+.dataGrid{
+  background-color: azure;
 }
 .loader {
   align-items: center;

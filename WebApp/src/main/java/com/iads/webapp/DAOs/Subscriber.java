@@ -63,17 +63,24 @@ public class Subscriber {
         this.subscriptionDate = subscriptionDate;
     }
 
+    public Subscriber(Long id, String name, String mail, Date subscriptionDate) {
+        this.id = id;
+        this.name = name;
+        this.mail = mail;
+        this.subscriptionDate = subscriptionDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Subscriber that = (Subscriber) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(mail, that.mail) && Objects.equals(subscriptionDate, that.subscriptionDate);
+        return Objects.equals(name, that.name) && Objects.equals(mail, that.mail) && Objects.equals(subscriptionDate, that.subscriptionDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, mail, subscriptionDate);
+        return Objects.hash(name, mail, subscriptionDate);
     }
 
     @Override

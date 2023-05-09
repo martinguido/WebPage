@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import { color } from "@mui/system";
 
 const Subscriptores = () => {
     const [rows, setRows] = useState([]);
@@ -51,25 +52,26 @@ const Subscriptores = () => {
                     <div className="loaderSquare4"></div>
                 </div> :
                 <div>
-                    <Box sx={{ height: '80vh', width: '100%' }}>
-                        <DataGrid
-                            rows={rows}
-                            columns={columns}
-                            initialState={{
-                                pagination: {
-                                    paginationModel: {
-                                        pageSize: 5,
-                                    },
+                    <Box sx={{ height: '78vh', width: '100%'}}>
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}
+                        initialState={{
+                            pagination: {
+                                paginationModel: {
+                                    pageSize: 5,
                                 },
-                            }}
-                            pageSizeOptions={[5]}
-                            checkboxSelection
-                            disableRowSelectionOnClick
-                        />
-                    </Box>
+                            },
+                        }}
+                        pageSizeOptions={[5]}
+                        checkboxSelection
+                        disableRowSelectionOnClick
+                        className="dataGrid"
+                    />
+                </Box>
                 </div>
             }
-        </div>
+        </div >
     );
 };
 

@@ -24,7 +24,7 @@ public class RequestController {
     }
     @PostMapping("/consultas/enviarConsulta")
     @CrossOrigin(origins = "http://localhost:3000")
-    public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO ) throws Exception{
+    public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO) throws Exception{
         try {
             requestService.createRequest(newRequestDTO);
             return new ResponseEntity<>(newRequestDTO, HttpStatus.OK);

@@ -27,6 +27,11 @@ const Consultas = () => {
             editable: false,
         },
         {
+            field: 'Estado',
+            headerName: 'Estado',
+            width: 200,
+        },
+        {
             field: 'Consulta',
             headerName: 'Consulta',
             width: 800,
@@ -56,7 +61,7 @@ const Consultas = () => {
                     <div className="loaderSquare4"></div>
                 </div> :
                 <div>
-                    <Box sx={{ height: '80vh', width: '100%' }}>
+                    <Box sx={{ height: '78vh', width: '100%' }}>
                         <DataGrid
                             rows={rows}
                             columns={columns}
@@ -70,6 +75,7 @@ const Consultas = () => {
                             pageSizeOptions={[5]}
                             checkboxSelection
                             disableRowSelectionOnClick
+                            className="dataGrid"
                         />
                     </Box>
                 </div>
