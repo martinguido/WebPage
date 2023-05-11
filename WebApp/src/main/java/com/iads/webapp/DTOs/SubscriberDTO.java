@@ -6,6 +6,7 @@ import java.util.Date;
 
 @Data
 public class SubscriberDTO {
+
     private String name;
     private String mail;
     private Date subscriptionDate;

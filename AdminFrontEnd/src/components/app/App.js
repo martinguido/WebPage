@@ -12,6 +12,7 @@ const App = () => {
       </header>
       <div>
         <Routes>
+          <Route path="/" element={<Subscriptores />} />
           <Route path="/Subscriptores" element={<Subscriptores />} />
           <Route path="/Consultas" element={<Consultas />} />
         </Routes>

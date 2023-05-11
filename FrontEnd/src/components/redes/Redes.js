@@ -46,7 +46,9 @@ const Redes = (props) => {
             <img src={logoWP} alt="Logo de Whatsapp" className="redesLogo" />
           </a >
         </div >
-        <button className="redesButton" onClick={() => handleModal()}>Quiero subscribirme al Newsletter</button>
+        <div className="redesDivButton">
+          <button className="redesButton" onClick={() => handleModal()}>Quiero subscribirme al Newsletter</button>
+        </div>
       </div>
     </footer >
   );

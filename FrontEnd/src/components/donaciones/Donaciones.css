@@ -1,0 +1,65 @@
+.donaciones {
+  align-items: center;
+  background-color: var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+  padding: 1%;
+  width: 100vw;
+}
+.donacionesTitle {
+  color: var(--brand-text);
+  padding: 2%;
+}
+.donacionesSubtitle {
+  color: var(--brand-text);
+  font-size: x-large;
+  padding: 2%;
+  text-align: center;
+}
+.donacionesDivLogo {
+  height: 30vh;
+  width: 60vh;
+}
+.donacionLogo {
+  -webkit-filter: grayscale(100%);
+  border-radius: 20px 20px 0px 20px;
+  filter: grayscale(100%);
+  height: 100%;
+  transition: all 1s ease;
+  width: 100%;
+}
+.donacionLogo:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transition: all 1s ease;
+}
+.donacionesDivButton {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2.5%;
+  width: 100vw;
+}
+.donacionesButton {
+  background: var(--brand-button);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px var(--brand-button-shadow);
+  color: var(--brand-text);
+  cursor: pointer;
+  font-size: x-large;
+  height: 8vh;
+  width: 30vw;
+}
+.donacionesButton:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease-in-out;
+}
+.donacionesText {
+  color: var(--brand-text);
+  font-size: x-large;
+  line-height: 7vh;
+  text-align: center;
+  padding: 2.5% 5% 0 2.5%;
+}

@@ -1,5 +1,6 @@
 package com.iads.webapp.Services;
 
+import com.iads.webapp.DAOs.Request;
 import com.iads.webapp.DAOs.Subscriber;
 import com.iads.webapp.DTOs.SubscriberDTO;
 import com.iads.webapp.Repositories.SubscriberRepository;
@@ -17,5 +18,8 @@ public class SubscriberService {
     public void createSubscriber(SubscriberDTO subscriberDTO) {
         Subscriber aNewSubscriber = new Subscriber(subscriberDTO.getName(), subscriberDTO.getMail(), subscriberDTO.getSubscriptionDate());
         subscriberRepository.save(aNewSubscriber);
+    }
+    public void saveAll(List<Subscriber> someSubscribers) {
+        subscriberRepository.saveAll(someSubscribers);
     }
 }

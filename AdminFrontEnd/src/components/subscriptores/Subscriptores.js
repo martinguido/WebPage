@@ -1,42 +1,58 @@
 import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
-import { color } from "@mui/system";
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
 const Subscriptores = () => {
     const [rows, setRows] = useState([]);
     const [loading, setLoading] = useState(true);
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
         {
-            field: 'Nombre',
+            description: 'Ordena por ID',
+            editable:false,
+            field: 'id',
+            headerName: 'ID',
+            sortable: true,
+            width: 150,
+        },
+        {
+            description: 'Ordena por nombre',
+            editable: false,
+            field: 'name',
             headerName: 'Nombre',
-            width: 150,
-            editable: false,
+            sortable: true,
+            width: 400,
         },
         {
-            field: 'Mail',
+            description: 'Ordena por mail',
+            editable: false,
+            field: 'mail',
             headerName: 'Mail',
-            width: 150,
-            editable: false,
+            type: 'mail',
+            sortable: true,
+            width: 450,
         },
         {
-            field: 'Fecha',
-            headerName: 'Fecha',
-            type: 'date',
-            width: 110,
+            description: 'Ordena por fecha de subscripcion',
             editable: false,
+            field: 'subscriptionDate',
+            headerName: 'Fecha de Subscripcion',
+            sortable: true,
+            type: 'dateTime',
+            valueGetter: ({ value }) => value && new Date(value),
+            width: 350,
         },
     ];
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetch('http://localhost:8080/api/v1/subscriptores');
             const json = await data.json();
+            console.log(json);
             setLoading(false);
             setRows(json);
         }
         fetchData()
-            .catch(console.error);;
+            .catch(console.error);
+
     }, [])
 
     return (
@@ -52,23 +68,26 @@ const Subscriptores = () => {
                     <div className="loaderSquare4"></div>
                 </div> :
                 <div>
-                    <Box sx={{ height: '78vh', width: '100%'}}>
-                    <DataGrid
-                        rows={rows}
-                        columns={columns}
-                        initialState={{
-                            pagination: {
-                                paginationModel: {
-                                    pageSize: 5,
+                    <Box sx={{ height: '78vh', width: '100%' }}>
+                        <DataGrid
+                            rows={rows}
+                            columns={columns}
+                            initialState={{
+                                pagination: {
+                                    paginationModel: {
+                                        pageSize: 9,
+                                    },
                                 },
-                            },
-                        }}
-                        pageSizeOptions={[5]}
-                        checkboxSelection
-                        disableRowSelectionOnClick
-                        className="dataGrid"
-                    />
-                </Box>
+                            }}
+                            pageSizeOptions={[9]}
+                            checkboxSelection
+                            slots={{
+                                toolbar: GridToolbar,
+                              }}
+                            disableRowSelectionOnClick
+                            className="dataGrid"
+                        />
+                    </Box>
                 </div>
             }
         </div >

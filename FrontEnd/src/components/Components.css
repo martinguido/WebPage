@@ -12,12 +12,15 @@
 @import "./redes/Redes.css";
 @import "./consejosVerdes/ConsejosVerdes.css";
 @import "./consejosVerdes/cardConsejos/CardConsejos.css";
+@import "./donaciones/Donaciones.css";
 
 :root {
   --brand-primary: #252525;
   --brand-text: #fff;
   --brand-error-text: #ff2626;
   --brand-border: #27FB6B;
+  --brand-button: #3d9fff;
+  --brand-button-shadow: rgba(61, 159, 255, 0.7);
 }
 
 .start {

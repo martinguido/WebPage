@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Alert from 'react-bootstrap/Alert';
 
 const Contactanos = () => {
 
@@ -8,11 +9,12 @@ const Contactanos = () => {
   const [isNameValid, setIsNameValid] = useState(true);
   const [isMailValid, setIsMailValid] = useState(true);
   const [isTextValid, setIsTextValid] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   const submitForm = async (event) => {
     event.preventDefault()
     if (isNameValid && isMailValid && isTextValid) {
-      const data = { name: nombre, mail: mail, request: consulta, requestDate: new Date() }
+      const data = { name: nombre, mail: mail, request: consulta, requestDate: new Date(), status:"Abierto"}
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -22,6 +24,10 @@ const Contactanos = () => {
         const response = await fetch("http://localhost:8080/api/v1/consultas/enviarConsulta", requestOptions);
         const data = await response.json();
         console.log(data);
+        setShowAlert(true);
+        setTimeout(() => {
+          setShowAlert(false);
+       }, 5000);
       }
       catch (error) {
         console.log(error);
@@ -61,6 +67,7 @@ const Contactanos = () => {
 
   return (
     <div className="contactanos">
+      { showAlert ?  <Alert onClose={() => { }}>Subscripto al Newsletter correctamente</Alert> : null}
       <div className="contactanosDiv" >
         <span className="contactanosHeading">Contactanos</span>
         <form className="contactanosForm" onSubmit={submitForm} >
