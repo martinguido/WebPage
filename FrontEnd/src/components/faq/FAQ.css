@@ -1,0 +1,22 @@
+.faq {
+  align-items: center;
+  background-color: var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+  padding: 2.5%;
+  width: 100vw;
+}
+.faqTitle {
+  color: var(--brand-text);
+}
+.faqQuestion {
+  color: var(--brand-text);
+  font-size: x-large;
+  font-weight: 900;
+}
+.faqAnswer {
+  color: var(--brand-text);
+  font-size: x-large;
+}
