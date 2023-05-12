@@ -1,19 +1,16 @@
 @import "./aliados/Aliados.css";
 @import "./app/App.css";
-
+@import "./consejosVerdes/ConsejosVerdes.css";
+@import "./consejosVerdes/cardConsejos/CardConsejos.css";
 @import "./contactanos/Contactanos.css";
-
-
+@import "./donaciones/Donaciones.css";
+@import "./faq/FAQ.css";
 @import "./header/Header.css";
 @import "./home/Home.css";
 @import "./mision/Mision.css";
 @import "./modalNewsletter/ModalNewsletter.css";
 @import "./navBar/NavBar.css";
 @import "./redes/Redes.css";
-@import "./consejosVerdes/ConsejosVerdes.css";
-@import "./consejosVerdes/cardConsejos/CardConsejos.css";
-@import "./donaciones/Donaciones.css";
-@import "./faq/FAQ.css";
 
 :root {
   --brand-primary: #252525;
@@ -23,7 +20,6 @@
   --brand-button: #3d9fff;
   --brand-button-shadow: rgba(61, 159, 255, 0.7);
 }
-
 .start {
   display: flex;
   flex-direction: column;

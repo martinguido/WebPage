@@ -11,25 +11,33 @@
 .faqTitle {
   color: var(--brand-text);
 }
-.faqDiv{
+.faqDiv {
   padding: 1%;
 }
-.faqDivQuestion{
-  background-color: blue;
-  padding: 1%;
+.faqDivQuestion {
+  background-color: var(--brand-primary) !important;
+  border-left: 0 solid var(--brand-border) !important;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.50) !important;
+  padding: 1rem;
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out !important;
+}
+.faqDivQuestion:hover {
+  padding-left: 0.5rem !important;
+  border-left: 0.5rem solid var(--brand-border) !important;
 }
 .faqQuestion {
   color: var(--brand-text);
-  display:flex;
-  padding: 1%;
+  display: flex;
   justify-content: center;
-  font-size: x-large;
-  font-weight: 900;
+  font-size: x-large !important;
+  font-weight: 900 !important;
+  padding: 1%;
   width: 100%;
 }
 .faqAnswer {
   color: var(--brand-text);
-  font-size: larger;
-  font-weight: 300;
+  font-size: larger !important;
+  font-weight: 300 !important;
   padding: 0px 5% 2.5% 5%;
 }
