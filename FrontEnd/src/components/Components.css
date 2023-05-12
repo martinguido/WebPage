@@ -13,6 +13,7 @@
 @import "./consejosVerdes/ConsejosVerdes.css";
 @import "./consejosVerdes/cardConsejos/CardConsejos.css";
 @import "./donaciones/Donaciones.css";
+@import "./faq/FAQ.css";
 
 :root {
   --brand-primary: #252525;
