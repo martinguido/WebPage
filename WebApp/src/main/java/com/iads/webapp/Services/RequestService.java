@@ -5,7 +5,6 @@ import com.iads.webapp.DTOs.RequestDTO;
 import com.iads.webapp.Repositories.RequestRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class RequestService {

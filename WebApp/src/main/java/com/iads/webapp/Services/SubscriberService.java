@@ -1,6 +1,5 @@
 package com.iads.webapp.Services;
 
-import com.iads.webapp.DAOs.Request;
 import com.iads.webapp.DAOs.Subscriber;
 import com.iads.webapp.DTOs.SubscriberDTO;
 import com.iads.webapp.Repositories.SubscriberRepository;
