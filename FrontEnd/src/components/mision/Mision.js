@@ -3,84 +3,63 @@ import React from "react";
 const Mision = () => {
 
   return (
-    <div className="mision">
+    <div className="misionDiv">
       <h1 className="misionTitle">
-        Nuestras acciones están enmarcadas en los Objetivos de Desarrollo
-        Sostenible de las Naciones Unidas.
+        Nuestras acciones están enmarcadas en los Objetivos de Desarrollo Sostenible de las Naciones Unidas
       </h1>
       <section className="secMision">
-        <div className="mision1">
+        <div className="mision">
           <h2 className="misionSubtitle">Mision</h2>
-          <p className="misionText1">
-            Nuestra organización tiene como objetivo principal la reforestación
-            y restauración de áreas degradadas y deforestadas en todo el mundo,
-            promoviendo la biodiversidad y el equilibrio ecológico.
-          </p>
-          <br />
-          <p className="misionText1">
-            Trabajamos con comunidades locales, gobiernos y otros actores
-            relevantes para implementar proyectos de reforestación sostenibles y
-            de largo plazo, que incluyen la capacitación y el empoderamiento de
-            las comunidades locales en la gestión y cuidado de los bosques.
-          </p>
-          <br />
-          <p className="misionText1">
-            Además, trabajamos en la promoción de políticas públicas y la
-            conciencia ambiental para reducir la deforestación y promover la
-            restauración ecológica.
-          </p>
-          <p className="misionText1">
-            Nuestro objetivo final es contribuir a la mitigación del cambio
-            climático y la conservación de la naturaleza para las generaciones
-            presentes y futuras.
-          </p>Ï
-        </div>
-        <div className="mision2">
-          <h2 className="misionSubtitle">Vision</h2>
-          <p className="misionText2">
-            Nuestra organización aspira a un mundo en el que los bosques y la
-            biodiversidad sean protegidos y restaurados, y donde las comunidades
-            locales estén empoderadas para la gestión sostenible de los recursos
-            naturales.
-          </p>
-          <br />
-          <p className="misionText2">
-            Queremos ser líderes en la reforestación y restauración ecológica,
-            trabajando en todo el mundo para impulsar la transformación hacia
-            una economía verde y sostenible. Nuestro trabajo es fundamental para
-            reducir la huella de carbono de la humanidad y mitigar los efectos
-            del cambio climático.
-          </p>
-          <br />
-          <p className="misionText2">
-            Además, queremos ser un ejemplo de una organización que integra el
-            enfoque de género y la inclusión social en todas nuestras acciones y
-            proyectos, promoviendo la igualdad de oportunidades y el respeto por
-            los derechos humanos.
+          <p className="misionText">
+            Generar propuestas innovadoras para alcanzar el desarrollo sustentable a través de la promoción, estudio y desarrollo de programas y proyectos prácticos y de investigación
+            <br /><br />
+            Contribuir al diseño, desarrollo y ejecución de políticas públicas para el desarrollo sustentable
+            <br /><br />
+            Establecer relaciones e intercambio cultural y científico con otras entidades afines nacionales y extranjeras
+            <br /><br />
+            Promover la adopción de patrones de producción y consumo sustentables en la sociedad, sector productivo y sector gubernamental
           </p>
         </div>
-        <div className="mision3">
-          <h2 className="misionSubtitle">Objetivos</h2>
-          <p className="misionText3">
-            Contribuir con organizaciones y empresas con el objetivo de promover
-            el desarrollo sostenible. Generar actividades solidarias para el
-            desarrollo de un mundo mejor en pos de las generaciones actuales y
-            futuras.
-          </p>
-          <br />
-          <p className="misionText3">
-            Mejorar la calidad del hábitat de las instituciones y los espacios
-            verdes circundantes mediante la valorización y la plantación de
-            distintas especies forestales y plantas nativas.
-          </p>
-          <br />
-          <p className="misionText3">
-            Promover la difusión y comunicación de las experiencias a nivel
-            institucional y en medios de comunicación.
+        <div className="vision">
+          <h2 className="visionSubtitle">Vision</h2>
+          <p className="visionText">
+            La visión de IADS es contribuir al desarrollo sustentable y afianzar las capacidades humanas e institucionales para lograr un desarrollo integral y armónico de las dimensiones económica, ambiental, social, política y cultural
+            <br /><br />
+            Nuestra contribución principal al desarrollo sustentable se centra en el estudio de los patrones de producción y consumo, generando propuestas y acciones de cambio que mejoren la calidad de vida y permitan un desarrollo equilibrado y equitativo entre las dimensiones económica, social y ambiental
+            <br /><br />
+            Para lograr cambios y acciones concretas, nos orientamos al fortalecimiento de los lazos de cooperación y trabajo compartido con otras organizaciones, tanto públicas como privadas tendiendo a la promoción de prácticas responsables y facilitando la investigación, extensión, difusión y capacitacion
           </p>
         </div>
-      </section>
-    </div>
+        <div className="campos">
+          <h2 className="camposSubtitle">Campos De Accion</h2>
+          <p className="camposText">
+            Producción y Consumo Sustentable
+            <br />
+            Promoviendo, a través de la generación de programas, proyectos y acciones que lleven al cambio gradual de los patrones actuales de producción y consumo, en asociación con otras entidades públicas, privadas y organizaciones de la sociedad civil
+          </p>
+          <p className="camposText">
+            Comunicación y Participación
+            <br />
+            Considerando la creación y el fortalecimiento de espacios de participación de los actores involucrados en la proyección de las actividades y proyectos. Atendiendo a que la información que se transmite es vital en la generación de consensos y participación ciudadana, se prevén estrategias de comunicación y difusión que acompañen estos procesos
+          </p>
+          <p className="camposText">
+            Educación y Capacitación
+            <br />
+            Impulsando iniciativas que contribuyan a que consumidores y productores adopten patrones de consumo y producción sustentables a través del conocimiento y el desarrollo de capacidades. La sustentabilidad de los proyectos de consumo y producción está dada, en buena medida por el fortalecimiento en la formación y la capacitación
+          </p>
+        </div>
+      </section >
+      <h3 className="misionBottomText">
+        El Instituto Argentino para el Desarrollo Sustentable es una organización no gubernamental, sin fines de lucro creada en 2007 formada por profesionales de diferentes áreas del conocimiento, como la economía, la ingeniería, la biología, la ciencia política, el derecho, con especialización y amplia experiencia en la temática ambiental y del desarrollo sustentable
+      </h3>
+      <h4 className="misionBottomSubText">
+        Nuestros proyectos y actividades se orientan a la generación de propuestas y acciones que tiendan a mejorar la sustentabilidad de los sectores productivo y gubernamental, promoviendo asimismo la modificación de los patrones de consumo actuales.
+        <br /><br />
+        Un aspecto importante es el rol del estado, por ello contamos con profesionales y especialistas en políticas públicas para el desarrollo sustentable. Nos constituimos en un espacio abierto donde integramos actividades y actores para ir más allá de los resultados de iniciativas individuales.
+        <br /><br />
+        Servimos como punto focal para la investigación, extensión, difusión y capacitación.
+      </h4>
+    </div >
   );
 };
 

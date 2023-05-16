@@ -1,94 +1,108 @@
-.mision {
-  background-color: #252525;
-  height: 1000px;
+.misionDiv {
+  align-items: center;
+  background-color: var(--brand-primary);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  padding: 2.5% 0px 2.5% 0px;
 }
-.misionTitle{
-  width: 75%;
+.misionTitle {
   justify-content: center;
   text-align: center;
+  width: 75vw;
 }
 .secMision {
   display: flex;
-  width: 85%;
-  height: 650px;
+  height: 70vh;
+  width: 90vw;
 }
-.mision1,
-.mision2,
-.mision3 {
+.mision,
+.vision,
+.campos {
+  align-content: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 0px;
   flex-grow: 1;
+  justify-content: center;
   object-fit: cover;
   opacity: 0.8;
   transition: 0.5s ease;
+  width: 0px;
+  height: 100%;
 }
-.mision1:hover,
-.mision2:hover,
-.mision3:hover {
-  width: 300px;
+.mision:hover,
+.vision:hover,
+.campos:hover {
   filter: contrast(120%);
   opacity: 1;
+  width: 30vw;
 }
-.mision1:hover > .misionText1 {
-  /* display: inline-block; */
-  height: 100px;
-  transition: all 0.8s ease;
-  visibility: visible;
+.mision:hover > .misionText {
+  height: 100%;
   opacity: 1;
+  transition: all 1.3s ease;
+  visibility: visible;
 }
-.mision2:hover > .misionText2 {
-  /* display: inline-block; */
-  height: 100px;
-  transition: all 0.8s ease;
-  visibility: visible;
+.vision:hover > .visionText {
+  height: 100%;
   opacity: 1;
+  transition: all 1.5s ease;
+  visibility: visible;
 }
-.mision3:hover > .misionText3 {
-  /* display: inline-block; */
-  height: 100px;
-  transition: all 0.8s ease;
-  visibility: visible;
+.campos:hover > .camposText {
+  height: 100%;
   opacity: 1;
+  transition: all 1.5s ease;
+  visibility: visible;
+}
+.campos:hover > .camposText {
+  height: 100%;
+  opacity: 1;
+  transition: all 3s ease;
+  visibility: visible;
 }
 
-.mision1 {
+.mision {
   background-image: url("mision1.jpg");
 }
-.mision2 {
+.vision {
   background-image: url("mision2.jpg");
 }
-.mision3 {
+.campos {
   background-image: url("mision3.jpg");
 }
 .misionTitle {
-  color: white;
+  color: var(--brand-text);
   font-weight: 400;
 }
-.misionSubtitle {
-  padding-top: 5%;
-  color: blanchedalmond;
+.misionSubtitle,
+.visionSubtitle,
+.camposSubtitle {
   align-self: center;
+  color: var(--brand-text);
   font-weight: 700;
+  padding-top: 5%;
 }
-.misionText1,
-.misionText2,
-.misionText3 {
-  /* display: none; */
-  /* display: block; */
-  visibility: hidden;
-  opacity: 0;
+.misionText,
+.visionText,
+.camposText,
+.camposH4 {
+  color: var(--brand-text);
+  font-size: large;
   height: 0px;
+  opacity: 0;
+  padding: 1% 5% 0px 5%;
   text-align: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 1%;
-  color: white;
-  font-size: 16px;
+  visibility: hidden;
+}
+
+.misionBottomText {
+  color: var(--brand-text);
+  padding: 2.5% 5% 1% 5%;
+  text-align: center;
+}
+.misionBottomSubText {
+  color: var(--brand-text);
+  padding: 1% 5% 1% 5%;
+  text-align: center;
 }

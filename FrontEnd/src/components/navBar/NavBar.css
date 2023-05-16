@@ -1,24 +1,27 @@
-.navBar{
-    width: 100vw;
+.logoNavBar {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  width: 3vw;
 }
-
-#logoNavBar{
-    width: 60px;
-    aspect-ratio: 1/1;
-    object-fit: contain;
+.h1NavBar {
+  color: white;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  margin: 0px 0px 0px 2.5%;
+  text-align: center;
 }
-.brandH1{
-    color: white;
-    text-align: center;
-    margin: 0px 10px;
-    font-size: larger;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-    
+.divNavBar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px 0px;
 }
-.brand{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0px;
+.linkTabNavBar {
+  color: white;
+  height: 4vw;
+}
+.linkTabNavBar:hover {
+  color: white;
 }

@@ -1,20 +1,47 @@
 import React, { useState } from "react";
-import Alert from 'react-bootstrap/Alert';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const SuccessAlert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+const ErrorAlert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Contactanos = () => {
-
   const [nombre, setNombre] = useState("");
   const [mail, setMail] = useState("");
   const [consulta, setConsulta] = useState("");
   const [isNameValid, setIsNameValid] = useState(true);
   const [isMailValid, setIsMailValid] = useState(true);
   const [isTextValid, setIsTextValid] = useState(true);
-  const [showAlert, setShowAlert] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
+
+  const handleOpenSuccess = () => {
+    setOpenSuccess(true);
+  };
+  const handleCloseSuccess = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSuccess(false);
+  };
+  const handleOpenError = () => {
+    setOpenError(true);
+  };
+  const handleCloseError = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenError(false);
+  };
 
   const submitForm = async (event) => {
     event.preventDefault()
     if (isNameValid && isMailValid && isTextValid) {
-      const data = { name: nombre, mail: mail, request: consulta, requestDate: new Date(), status:"Abierto"}
+      const data = { name: nombre, mail: mail, request: consulta, requestDate: new Date(), status: "Abierto" }
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -24,13 +51,11 @@ const Contactanos = () => {
         const response = await fetch("http://localhost:8080/api/v1/consultas/enviarConsulta", requestOptions);
         const data = await response.json();
         console.log(data);
-        setShowAlert(true);
-        setTimeout(() => {
-          setShowAlert(false);
-       }, 5000);
+        handleOpenSuccess();
       }
       catch (error) {
         console.log(error);
+        handleOpenError();
       }
     }
   }
@@ -67,7 +92,16 @@ const Contactanos = () => {
 
   return (
     <div className="contactanos">
-      { showAlert ?  <Alert onClose={() => { }}>Subscripto al Newsletter correctamente</Alert> : null}
+      <Snackbar open={openSuccess} autoHideDuration={6000} onClose={handleCloseSuccess}>
+        <SuccessAlert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%' }}>
+          Tu consulta ha sido registrada correctamente!
+        </SuccessAlert>
+      </Snackbar>
+      <Snackbar open={openError} autoHideDuration={6000} onClose={handleCloseError}>
+        <ErrorAlert onClose={handleCloseError} severity="error" sx={{ width: '100%' }}>
+          Hubo un error! Reintenta en unos minutos!
+        </ErrorAlert>
+      </Snackbar>
       <div className="contactanosDiv" >
         <span className="contactanosHeading">Contactanos</span>
         <form className="contactanosForm" onSubmit={submitForm} >

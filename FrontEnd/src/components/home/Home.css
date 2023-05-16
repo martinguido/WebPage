@@ -1,5 +1,4 @@
-
-.home{
+.home {
   background-color: var(--brand-primary);
 }
 .imgHome1,
@@ -19,11 +18,11 @@
   background-image: url("./home1.jpeg");
 }
 .imgHome2 {
-  background-image: url("./home3.jpeg");
+  background-image: url("./home2.jpeg");
   margin-top: 1.5%;
 }
 .imgHome3 {
-  background-image: url("./home4.jpeg");
+  background-image: url("./home3.jpeg");
   margin-top: 1.5%;
 }
 .homeGlass {

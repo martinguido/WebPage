@@ -1,14 +1,41 @@
 import React, { useState } from "react";
 import closeIcon from "./closeIcon.png";
-import Alert from 'react-bootstrap/Alert';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const SuccessAlert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+const ErrorAlert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const ModalNewsletter = (props) => {
   const [nombre, setNombre] = useState("");
   const [mail, setMail] = useState("");
   const [isNameValid, setIsNameValid] = useState(true);
   const [isMailValid, setIsMailValid] = useState(true);
-  const [showCorrectAlert, setShowCorrectAlert] = useState(false);
-  const [showIncorrectAlert, setShowIncorrectAlert] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
+
+  const handleOpenSuccess = () => {
+    setOpenSuccess(true);
+  };
+  const handleCloseSuccess = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSuccess(false);
+  };
+  const handleOpenError = () => {
+    setOpenError(true);
+  };
+  const handleCloseError = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenError(false);
+  };
 
   const submitForm = async (event) => {
     event.preventDefault()
@@ -23,19 +50,14 @@ const ModalNewsletter = (props) => {
         const response = await fetch("http://localhost:8080/api/v1/subscriptores/subscribirse", requestOptions);
         const data = await response.json();
         console.log(data);
-        setShowCorrectAlert(true);
         setTimeout(() => {
-          setShowCorrectAlert(false);
-       }, 5000);
-
+          closeModal();
+        }, 2000);
+        handleOpenSuccess();
       }
       catch (error) {
         console.log(error);
-        setShowIncorrectAlert(true);
-        setTimeout(() => {
-          setShowIncorrectAlert(false);
-       }, 5000);
-
+        handleOpenError();
       }
     }
   }
@@ -61,15 +83,22 @@ const ModalNewsletter = (props) => {
   }
 
   const closeModal = () => {
-    console.log("CERRANDO MODAL");
     props.setViewModalState(false);
     document.body.style.overflow = "auto";
   }
 
   return (
     <div>
-      { showCorrectAlert ?  <Alert variant="outlined" severity="error" onClose={() => { }}>Subscripto al Newsletter exitosamente!</Alert> : null}
-      { showIncorrectAlert ?  <Alert variant="outlined" severity="success" onClose={() => { }}>Lo sentimos, hubo un error! Volve a intentarlo.</Alert> : null}
+      <Snackbar open={openSuccess} autoHideDuration={6000} onClose={handleCloseSuccess}>
+        <SuccessAlert onClose={handleCloseSuccess} severity="success" sx={{ width: '100%' }}>
+          Te subscribiste correctamente!
+        </SuccessAlert>
+      </Snackbar>
+      <Snackbar open={openError} autoHideDuration={6000} onClose={handleCloseError}>
+        <ErrorAlert onClose={handleCloseError} severity="error" sx={{ width: '100%' }}>
+          Hubo un error! Reintenta en unos minutos!
+        </ErrorAlert>
+      </Snackbar>
       <div className="newsletter">
         <div>
           <div className="subscribe">
@@ -107,7 +136,7 @@ const ModalNewsletter = (props) => {
               </div>
             </div>
             <div className="button">
-              <button className="form__button" onClick={() => submitForm()}>Subscribirme</button>
+              <button className="form__button" onClick={(event) => submitForm(event)}>Subscribirme</button>
             </div>
           </div>
         </div>
