@@ -3,8 +3,11 @@ import com.iads.webapp.DAOs.Subscriber;
 import com.iads.webapp.DTOs.SubscriberDTO;
 import com.iads.webapp.Services.SubscriberService;
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -18,8 +21,11 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class SubscriberController {
     private SubscriberService subscriberService;
-    public SubscriberController(SubscriberService subscriberService) {
+    private final JavaMailSender emailSender;
+    @Autowired
+    public SubscriberController(SubscriberService subscriberService, JavaMailSender emailSender) {
         this.subscriberService = subscriberService;
+        this.emailSender = emailSender;
     }
 
     @PostConstruct
@@ -68,7 +74,14 @@ public class SubscriberController {
     }
     @PostMapping("/subscriptores/subscribirse")
     public ResponseEntity<SubscriberDTO> createSubscriber(@RequestBody SubscriberDTO newSubscriberDTO ){
-        System.out.println(newSubscriberDTO);
+        String mail = newSubscriberDTO.getMail();
+        String name = newSubscriberDTO.getName();
+        SimpleMailMessage email = new SimpleMailMessage();
+        email.setTo(mail);
+        email.setFrom("argentinaiads@hotmail.com");
+        email.setSubject("Bienvenido a IADS," + name);
+        email.setText("Bienvenido a IADS, gracias por querer formar parte! Pronto te mandaremos el Newsletter mensual");
+        emailSender.send(email);
         subscriberService.createSubscriber(newSubscriberDTO);
         return new ResponseEntity<>(newSubscriberDTO, HttpStatus.OK);
     }

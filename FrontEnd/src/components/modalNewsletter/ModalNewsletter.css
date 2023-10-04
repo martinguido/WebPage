@@ -25,12 +25,14 @@
   font-size: 26px;
   margin-top: 15px;
   margin-bottom: 18px;
+  color: var(--brand-secondary-text);
 }
 
 .subscribe__copy {
   max-width: 450px;
   text-align: center;
   line-height: 1.5;
+  color: var(--brand-secondary-text);
 }
 
 

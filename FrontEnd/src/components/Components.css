@@ -15,6 +15,7 @@
 :root {
   --brand-primary: #252525;
   --brand-text: #fff;
+  --brand-secondary-text: #000;
   --brand-error-text: #ff2626;
   --brand-border: #27FB6B;
   --brand-button: #3d9fff;

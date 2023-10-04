@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js"
 import Home from "../home/Home.js";
-import Header from "../header/Header.js";
+// import Header from "../header/Header.js";
 import NavBar from "../navBar/NavBar.js";
 import Mision from "../mision/Mision.js";
 import Testimonios from "../testimonios/Testimonios.js";
@@ -21,7 +21,7 @@ const App = () => {
     <div>
       {viewModal ? <ModalNewsletter setViewModalState={setViewModal} /> : null}
       <div >
-        <Header />
+        {/* <Header /> */}
         <header className="appHeader">
           <NavBar />
         </header>
