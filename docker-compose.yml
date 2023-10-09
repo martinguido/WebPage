@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  iads_backend:
+    container_name: iads_backend
+    image: iads_backend
+    platform: linux/amd64
+    build: ./WebApp
+    depends_on:
+      - postgres
+    networks:
+      hfnet:
+        ipv4_address: 192.168.25.10
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.profiles.active": "dev",
+        "spring.jpa.database": "POSTGRESQL",
+        "spring.sql.init.platform":"postgres",
+        "spring.jpa.properties.hibernate.dialect":"org.hibernate.dialect.PostgreSQLDialect",
+        "spring.datasource.driver-class-name":"org.postgresql.Driver",
+        "spring.datasource.url":"jdbc:postgresql://192.168.55.11:5432/postgres",
+        "spring.datasource.username":"postgres",
+        "spring.datasource.password":"postgres",
+        "spring.jpa.generate-ddl":"true",
+        "spring.jpa.hibernate.ddl-auto":"create-drop",
+        "spring.jpa.properties.hibernate.format-sql":"true"
+            }'
+  iads_postgres:
+    container_name: iads_postgres
+    image: postgres:latest
+    restart: always
+    networks:
+      hfnet:
+        ipv4_address: 192.168.25.11
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+  iads_pgadmin:
+    container_name: iads_pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    networks:
+      hfnet:
+        ipv4_address: 192.168.25.12
+    environment:
+      PGADMIN_DEFAULT_EMAIL: name@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - iadsData:/etc/data
+    ports:
+      - 80:80
+  iads_frontend:
+    container_name: iads_frontend
+    image: iads_frontend
+    build: ./FrontEnd
+    ports:
+      - "3000:3000"
+networks:
+  hfnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.25.0/24
+          gateway: 192.168.25.1
+volumes:
+  persistedData:
+    name: "iadsData"
