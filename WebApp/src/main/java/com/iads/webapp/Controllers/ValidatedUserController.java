@@ -12,17 +12,17 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/validatedUser")
 @RequiredArgsConstructor
 @CrossOrigin("*")
-public class UserController {
+public class ValidatedUserController {
 
     private RequestService requestService;
     private SubscriberService subscriberService;
 
     private final JavaMailSender emailSender;
     @PostMapping("/consultas/enviarConsulta")
-    public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO) throws Exception{
+    public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO) {
         try {
             requestService.createRequest(newRequestDTO);
             return new ResponseEntity<>(newRequestDTO, HttpStatus.OK);
