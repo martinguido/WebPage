@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js"
+import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js";
 import Home from "../home/Home.js";
 // import Header from "../header/Header.js";
 import NavBar from "../navBar/NavBar.js";
@@ -12,16 +12,16 @@ import Donaciones from "../donaciones/Donaciones.js";
 import FAQ from "../faq/FAQ.js";
 import Redes from "../redes/Redes.js";
 import Contactanos from "../contactanos/Contactanos.js";
+import Consultas from "../consultas/Consultas.js";
+import Subscriptores from "../subscriptores/Subscriptores.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
-
   const [viewModal, setViewModal] = useState(false);
   return (
     <div>
       {viewModal ? <ModalNewsletter setViewModalState={setViewModal} /> : null}
-      <div >
-        {/* <Header /> */}
+      <div>
         <header className="appHeader">
           <NavBar />
         </header>
@@ -36,6 +36,8 @@ const App = () => {
             <Route path="/Donaciones" element={<Donaciones />} />
             <Route path="/FAQ" element={<FAQ />} />
             <Route path="/Contactanos" element={<Contactanos />} />
+            <Route path="/Subscrptores" element={<Subscriptores />} />
+            <Route path="/Consultas" element={<Consultas />} />
           </Routes>
         </div>
         <footer>
