@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import authHeader from "../services/auth-header";
+
+const API_URL_SUBSCRIPTORES = "http://localhost:8080/api/v1/manager/subscriptores";
+
 
 const Subscriptores = () => {
   const [rows, setRows] = useState([]);
@@ -44,7 +48,10 @@ const Subscriptores = () => {
   ];
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://localhost:8080/api/v1/subscriptores");
+      const data = await fetch(API_URL_SUBSCRIPTORES, {
+        headers: authHeader(), method: 'GET',
+        'Content-Type': 'application/json'
+      });
       const json = await data.json();
       console.log(json);
       setLoading(false);

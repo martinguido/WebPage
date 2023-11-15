@@ -45,14 +45,13 @@ public class ApplicationConfig {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.office365.com");
         mailSender.setPort(587);
-        mailSender.setUsername("automaticmoebar@hotmail.com");
-        mailSender.setPassword("LionelMessi10");
+        mailSender.setUsername("argentinaiads@hotmail.com");
+        mailSender.setPassword("adminIads");
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         return mailSender;
-
     }
 
 }

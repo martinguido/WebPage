@@ -6,7 +6,6 @@ import NavBar from "../navBar/NavBar.js";
 import Mision from "../mision/Mision.js";
 import Testimonios from "../testimonios/Testimonios.js";
 import Aliados from "../aliados/Aliados.js";
-import Voluntarios from "../voluntarios/Voluntarios.js";
 import ConsejosVerdes from "../consejosVerdes/ConsejosVerdes";
 import Donaciones from "../donaciones/Donaciones.js";
 import FAQ from "../faq/FAQ.js";
@@ -31,12 +30,11 @@ const App = () => {
             <Route path="/Mision" element={<Mision />} />
             <Route path="/Testimonios" element={<Testimonios />} />
             <Route path="/Aliados" element={<Aliados />} />
-            <Route path="/Voluntarios" element={<Voluntarios />} />
             <Route path="/ConsejosVerdes" element={<ConsejosVerdes />} />
             <Route path="/Donaciones" element={<Donaciones />} />
             <Route path="/FAQ" element={<FAQ />} />
             <Route path="/Contactanos" element={<Contactanos />} />
-            <Route path="/Subscrptores" element={<Subscriptores />} />
+            <Route path="/Subscriptores" element={<Subscriptores />} />
             <Route path="/Consultas" element={<Consultas />} />
           </Routes>
         </div>
