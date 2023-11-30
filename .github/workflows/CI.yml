@@ -1,0 +1,64 @@
+name: CI Docker
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Change directory to /backend if it exists
+        id: change-directory
+        run: |
+          if [ -d "WebApp" ]; then
+            cd WebApp && echo "Changed directory to WebApp"
+            echo "directory_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "directory_changed=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+      - name: Set up JDK 17
+        if: steps.change-directory.outputs.directory_changed == 'true'
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: |
+          if [ -d "WebApp" ]; then
+            cd WebApp
+            chmod +x mvnw
+            ./mvnw clean package
+            ./mvnw test
+            ./mvnw test-compile
+            ./mvnw test jacoco:report
+            ./mvnw coveralls:report
+          fi
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: npm install and test
+        run: |
+          if [ -d "FrontEnd" ]; then
+            cd FrontEnd
+            npm install --force
+            npm test
+          fi
+
+      - name: Coveralls
+        if: steps.change-directory.outputs.directory_changed == 'true'
+        uses: coverallsapp/github-action@v2
+        continue-on-error: true
