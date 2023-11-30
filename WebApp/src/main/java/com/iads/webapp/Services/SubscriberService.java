@@ -3,13 +3,14 @@ package com.iads.webapp.Services;
 import com.iads.webapp.DAOs.Subscriber;
 import com.iads.webapp.DTOs.SubscriberDTO;
 import com.iads.webapp.Repositories.SubscriberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class SubscriberService {
-    private SubscriberRepository subscriberRepository;
-    public SubscriberService(SubscriberRepository subscriberRepository){this.subscriberRepository = subscriberRepository;}
+    private final SubscriberRepository subscriberRepository;
 
     public List<Subscriber> getAllSubscribers() {return (List<Subscriber>) subscriberRepository.findAll();
     }

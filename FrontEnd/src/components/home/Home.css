@@ -37,5 +37,5 @@
 }
 .homeTitle {
   color: var(--brand-text);
-  font-family: "Euclid Circular A";
+  font-family: "Euclid Circular A", sans-serif;
 }

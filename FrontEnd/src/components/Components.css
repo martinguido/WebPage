@@ -11,13 +11,14 @@
 @import "./modalNewsletter/ModalNewsletter.css";
 @import "./navBar/NavBar.css";
 @import "./redes/Redes.css";
-
+@import "./subscriptores/Subscriptores.css";
+@import "./consultas/Consultas.css";
 :root {
   --brand-primary: #252525;
   --brand-text: #fff;
   --brand-secondary-text: #000;
   --brand-error-text: #ff2626;
-  --brand-border: #27FB6B;
+  --brand-border: #27fb6b;
   --brand-button: #3d9fff;
   --brand-button-shadow: rgba(61, 159, 255, 0.7);
 }

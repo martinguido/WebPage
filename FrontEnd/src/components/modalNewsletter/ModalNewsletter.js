@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import closeIcon from "./closeIcon.png";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import apiUrl from "../../deploy";
 
 const SuccessAlert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -47,7 +48,7 @@ const ModalNewsletter = (props) => {
         body: JSON.stringify(data)
       }
       try {
-        const response = await fetch("http://localhost:8080/api/v1/subscriptores/subscribirse", requestOptions);
+        const response = await fetch(apiUrl + "/api/v1/subscriptores/subscribirse", requestOptions);
         const data = await response.json();
         console.log(data);
         setTimeout(() => {

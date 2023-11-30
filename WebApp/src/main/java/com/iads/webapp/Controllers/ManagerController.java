@@ -1,13 +1,18 @@
 package com.iads.webapp.Controllers;
 
 import com.iads.webapp.DAOs.Request;
-import com.iads.webapp.DTOs.RequestDTO;
+import com.iads.webapp.DAOs.Subscriber;
 import com.iads.webapp.Services.RequestService;
+import com.iads.webapp.Services.SubscriberService;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,19 +20,20 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1")
-@CrossOrigin(origins = "*")
-public class RequestController {
-    private RequestService requestService;
-    public RequestController(RequestService requestService) {
-        this.requestService = requestService;
-    }
+@RequestMapping("/api/v1/manager")
+@RequiredArgsConstructor
+@CrossOrigin("*")
+public class ManagerController {
+    private final RequestService requestService;
+    private final SubscriberService subscriberService;
+
+    private final JavaMailSender emailSender;
     @PostConstruct
     public void loadSampleRequest() throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date1 = format.parse("2022-02-05T12:12:12");
         Date date2 = format.parse("2023-10-10T12:00:00");
-        List <Request> someSampleRequests = new ArrayList<>();
+        List<Request> someSampleRequests = new ArrayList<>();
         Request sampleRequest1 = new Request(1L,"Martin Guido", "guidomartin7@gmail.com","Tengo un problema con la pagina de Mision", date1,"Cerrado");
         someSampleRequests.add(sampleRequest1);
         Request sampleRequest2 = new Request(2L,"Julian Garcia Terna", "juliangt@gmail.com","Me gustaria contactarme para ser voluntario", date2,"Abierto");
@@ -60,21 +66,10 @@ public class RequestController {
         someSampleRequests.add(sampleRequest15);
         requestService.saveAll(someSampleRequests);
     }
-    @GetMapping ("/consultas")
+    @GetMapping("/consultas")
     public ResponseEntity<List<Request>> getRequests(){
         List <Request> allRequests = requestService.getAllRequests();
         return new ResponseEntity<>( allRequests, HttpStatus.OK);
-    }
-    @PostMapping("/consultas/enviarConsulta")
-    public ResponseEntity<?> createRequest(@RequestBody RequestDTO newRequestDTO) throws Exception{
-        try {
-            requestService.createRequest(newRequestDTO);
-            return new ResponseEntity<>(newRequestDTO, HttpStatus.OK);
-        }
-        catch (Error e) {
-            System.out.println(e);
-            return new ResponseEntity<>("No se pudo enviar la consulta correctamente. Reintentar.",HttpStatus.BAD_REQUEST);
-        }
     }
 
     @GetMapping("/consultas/actualizarConsulta")
@@ -99,4 +94,53 @@ public class RequestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+
+
+    @PostConstruct
+    public void loadSampleSubscribers() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = format.parse("2022-05-05T12:12:12");
+        Date date2 = format.parse("2023-10-10T12:00:00");
+        List <Subscriber> someSampleSubscribers = new ArrayList<>();
+        Subscriber sampleSubscriber1 = new Subscriber(1L,"Martin Guido", "guidomartin7@gmail.com", date1);
+        someSampleSubscribers.add(sampleSubscriber1);
+        Subscriber sampleSubscriber2 = new Subscriber(2L,"Julian Garcia Terna", "juliangt@gmail.com", date2);
+        someSampleSubscribers.add(sampleSubscriber2);
+        Subscriber sampleSubscriber3 = new Subscriber(3L,"Mario Gieco", "mariogieco@yahoo.com.ar", date1);
+        someSampleSubscribers.add(sampleSubscriber3);
+        Subscriber sampleSubscriber4 = new Subscriber(4L,"Carlos Garcia", "carlogarcia@hotomail.com", date2);
+        someSampleSubscribers.add(sampleSubscriber4);
+        Subscriber sampleSubscriber5 = new Subscriber(5L,"Ramon Martinez", "ramonm@gmail.com", date1);
+        someSampleSubscribers.add(sampleSubscriber5);
+        Subscriber sampleSubscriber6 = new Subscriber(6L,"German Tromso", "germantromso@gmail.com", date2);
+        someSampleSubscribers.add(sampleSubscriber6);
+        Subscriber sampleSubscriber7 = new Subscriber(7L,"Hernan Signor", "hernansignor@gmail.com", date1);
+        someSampleSubscribers.add(sampleSubscriber7);
+        Subscriber sampleSubscriber8 = new Subscriber(8L,"Mariano Hernandez", "mariano_h@outlook.com", date2);
+        someSampleSubscribers.add(sampleSubscriber8);
+        Subscriber sampleSubscriber9 = new Subscriber(9L,"Victoria Bacco", "victoriab170@gmail.com", date1);
+        someSampleSubscribers.add(sampleSubscriber9);
+        Subscriber sampleSubscriber10 = new Subscriber(10L,"Nicolas Guillermo", "nicog10@hotmail.com.ar", date2);
+        someSampleSubscribers.add(sampleSubscriber10);
+        Subscriber sampleSubscriber11 = new Subscriber(11L,"Analia Cambea", "ana_cambea@outlook.com", date1);
+        someSampleSubscribers.add(sampleSubscriber11);
+        Subscriber sampleSubscriber12 = new Subscriber(12L,"Alejandro Fernandez", "alejandro_f@outlook.com.ar", date2);
+        someSampleSubscribers.add(sampleSubscriber12);
+        Subscriber sampleSubscriber13 = new Subscriber(13L,"Carmen Riccardo", "carmenricc@gmail.com", date1);
+        someSampleSubscribers.add(sampleSubscriber13);
+        Subscriber sampleSubscriber14 = new Subscriber(14L,"Agustina Vetton", "vetton.agus@yahoo.com", date2);
+        someSampleSubscribers.add(sampleSubscriber14);
+        Subscriber sampleSubscriber15 = new Subscriber(15L,"Ximena Sanchez", "xime_sanchez@hotmail.com", date1);
+        someSampleSubscribers.add(sampleSubscriber15);
+        subscriberService.saveAll(someSampleSubscribers);
+    }
+
+    @GetMapping("/subscriptores")
+    public ResponseEntity<List<Subscriber>> getSubscribers(){
+        List <Subscriber> allSubscribers = subscriberService.getAllSubscribers();
+        return new ResponseEntity<>( allSubscribers, HttpStatus.OK);
+    }
+
+
 }

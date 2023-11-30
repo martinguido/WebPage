@@ -3,13 +3,14 @@ package com.iads.webapp.Services;
 import com.iads.webapp.DAOs.Request;
 import com.iads.webapp.DTOs.RequestDTO;
 import com.iads.webapp.Repositories.RequestRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class RequestService {
-    private RequestRepository requestRepository;
-    public RequestService(RequestRepository requestRepository){this.requestRepository = requestRepository;}
+    private final RequestRepository requestRepository;
 
     public List<Request> getAllRequests(){
         return requestRepository.findAll();
