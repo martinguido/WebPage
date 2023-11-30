@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import authHeader from "../services/auth-header";
+import apiUrl from "../../deploy";
 
-const API_URL_SUBSCRIPTORES = "http://localhost:8080/api/v1/manager/subscriptores";
+const API_URL_SUBSCRIPTORES = apiUrl + "/api/v1/manager/subscriptores";
 
 
 const Subscriptores = () => {

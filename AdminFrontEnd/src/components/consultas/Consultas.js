@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Box from '@mui/material/Box';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import Button from '@mui/material/Button';
+import apiUrl from "../../../../FrontEnd/src/deploy";
 
 const Consultas = () => {
     const [rows, setRows] = useState([]);
@@ -90,10 +91,10 @@ const Consultas = () => {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' }
-          }
-        
+        }
+
         const updateData = async (idRequest) => {
-            const response = await fetch('http://localhost:8080/api/v1/consultas/actualizarConsulta/' + idRequest, requestOptions);
+            const response = await fetch(apiUrl + "/api/v1/consultas/actualizarConsulta/' + idRequest, requestOptions);
             const data = await response;
             console.log(data);
         }
