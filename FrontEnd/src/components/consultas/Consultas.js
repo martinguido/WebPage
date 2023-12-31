@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
+import authHeader from "../services/auth-header";
+import apiUrl from "../../deploy";
 
 const Consultas = () => {
   const [rows, setRows] = useState([]);
@@ -84,7 +86,7 @@ const Consultas = () => {
       ),
     },
   ];
-
+  const API_URL_CONSULTAS = apiUrl + "/api/v1/manager/consultas";
   const handleAnswer = (idRequest, mail, bodyText) => {
     const preBody =
       "Hola, te contactamos de IADS. Como estas? Recientemente, nos contactaste por la siguiente consulta:%0D%0A";
@@ -97,8 +99,8 @@ const Consultas = () => {
 
     const updateData = async (idRequest) => {
       const response = await fetch(
-        "http://localhost:8080/api/v1/consultas/actualizarConsulta/" +
-          idRequest,
+        apiUrl + "/api/v1/consultas/actualizarConsulta/" +
+        idRequest,
         requestOptions
       );
       const data = await response;
@@ -109,14 +111,17 @@ const Consultas = () => {
   };
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://localhost:8080/api/v1/consultas");
+      const data = await fetch(API_URL_CONSULTAS, {
+        headers: authHeader(), method: 'GET',
+        'Content-Type': 'application/json'
+      });
       const json = await data.json();
+      console.log(json);
       setLoading(false);
       setRows(json);
     };
     fetchData().catch(console.error);
-    console.log(counter);
-  }, [counter]);
+  }, []);
 
   return (
     <div className="consultas">

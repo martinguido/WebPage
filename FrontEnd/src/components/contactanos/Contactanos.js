@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import apiUrl from "../../deploy";
 
 const SuccessAlert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -48,7 +49,7 @@ const Contactanos = () => {
         body: JSON.stringify(data)
       }
       try {
-        const response = await fetch("http://localhost:8080/api/v1/consultas/enviarConsulta", requestOptions);
+        const response = await fetch(apiUrl + "/api/v1/consultas/enviarConsulta", requestOptions);
         const data = await response.json();
         console.log(data);
         handleOpenSuccess();

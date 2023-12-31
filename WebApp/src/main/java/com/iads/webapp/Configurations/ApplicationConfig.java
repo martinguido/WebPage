@@ -12,6 +12,8 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Properties;
 
@@ -45,14 +47,18 @@ public class ApplicationConfig {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.office365.com");
         mailSender.setPort(587);
-        mailSender.setUsername("automaticmoebar@hotmail.com");
-        mailSender.setPassword("LionelMessi10");
+        mailSender.setUsername("argentinaiads@hotmail.com");
+        mailSender.setPassword("adminIads");
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         return mailSender;
+    }
 
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
 
 }
