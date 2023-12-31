@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
     <option name="ACTIVE_PROFILES" value="test" />
-    <module name="webapp" />
+    <module name="bar" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.iads.webapp.WebappApplication" />
     <extension name="coverage">
       <pattern>
