@@ -14,9 +14,8 @@ public class SubscriberDTO {
     public SubscriberDTO() {
     }
 
-    public SubscriberDTO(String name, String mail, Date subscriptionDate) {
+    public SubscriberDTO(String name, String mail) {
         this.name = name;
         this.mail = mail;
-        this.subscriptionDate = subscriptionDate;
     }
 }

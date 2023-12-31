@@ -41,7 +41,7 @@ const ModalNewsletter = (props) => {
   const submitForm = async (event) => {
     event.preventDefault()
     if (isNameValid && isMailValid) {
-      const data = { name: nombre, mail: mail, subscriptionDate: new Date() }
+      const data = { name: nombre, mail: mail}
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
