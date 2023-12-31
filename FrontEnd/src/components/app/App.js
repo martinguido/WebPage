@@ -21,7 +21,7 @@ const App = () => {
     <div>
       {viewModal ? <ModalNewsletter setViewModalState={setViewModal} /> : null}
       <div>
-        <header className="appHeader">
+        <header className="appHeader" data-testid="appHeader">
           <NavBar />
         </header>
         <div>
