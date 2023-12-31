@@ -163,7 +163,7 @@
 					<excludes>
 						<exclude>**/Configurations/*.class</exclude>
 						<exclude>**/DTOs/*.class</exclude>
-						<exclude>**/Entities/*.class</exclude>
+						<exclude>**/DAOs/*.class</exclude>
 						<exclude>**/Exceptions/*.class</exclude>
 						<exclude>**/Repositories/*.class</exclude>
 					</excludes>
