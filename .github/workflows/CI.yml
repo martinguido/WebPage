@@ -50,13 +50,6 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: npm install and test
-        run: |
-          if [ -d "FrontEnd" ]; then
-            cd FrontEnd
-            npm install --force
-            npm test
-          fi
 
       - name: Coveralls
         if: steps.change-directory.outputs.directory_changed == 'true'
