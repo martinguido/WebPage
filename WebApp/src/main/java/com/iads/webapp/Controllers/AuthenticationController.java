@@ -80,7 +80,6 @@ public class AuthenticationController {
             requestService.createRequest(newRequestDTO);
             return ResponseEntity.status(HttpStatus.OK).body("Request creada con exito!");
         } catch (Error e) {
-            System.out.println(e);
             return new ResponseEntity<>("No se pudo enviar la consulta correctamente. Reintentar.", HttpStatus.BAD_REQUEST);
         }
     }
