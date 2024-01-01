@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.iads.webapp.DAOs.Request;
@@ -32,7 +33,7 @@ public class RequestServiceTests {
 
     @Test
     public void testGetAllRequests() {
-        List<Request> mockRequests = new ArrayList<>();
+        List<Request> mockRequests = List.of(new Request());
         when(requestRepository.findAll()).thenReturn(mockRequests);
         List<Request> result = requestService.getAllRequests();
         assertEquals(mockRequests, result);
@@ -41,20 +42,19 @@ public class RequestServiceTests {
     @Test
     public void testCreateRequest() {
         RequestDTO requestDTO = new RequestDTO("John", "john@example.com", "Some request");
-
-        LocalDateTime fechaHoraActual = LocalDateTime.now();
-        Request expectedRequest = new Request(requestDTO.getName(), requestDTO.getMail(), requestDTO.getRequest(), java.sql.Timestamp.valueOf(fechaHoraActual));
-
         requestService.createRequest(requestDTO);
 
-        verify(requestRepository, times(1)).save(expectedRequest);
+        verify(requestRepository, times(1)).save(argThat(argument ->
+                argument.getName().equals(requestDTO.getName()) &&
+                        argument.getMail().equals(requestDTO.getMail()) &&
+                        argument.getRequest().equals(requestDTO.getRequest()) &&
+                        argument.getRequestDate() != null
+        ));
     }
 
     @Test
     public void testSaveAllRequests() {
-        List<Request> someRequests = new ArrayList<>();
-        // Agrega elementos a someRequests según tus necesidades
-
+        List<Request> someRequests = List.of(new Request(), new Request());
         requestService.saveAll(someRequests);
 
         verify(requestRepository, times(1)).saveAll(someRequests);
@@ -63,7 +63,7 @@ public class RequestServiceTests {
     @Test
     public void testGetRequestById() throws Exception {
         Long idRequest = 1L;
-        Request mockRequest = new Request(/* Configurar el objeto Request simulado */);
+        Request mockRequest = Request.builder().id(1L).build();
         when(requestRepository.findById(idRequest)).thenReturn(java.util.Optional.of(mockRequest));
 
         Request result = requestService.getById(idRequest);
@@ -81,7 +81,7 @@ public class RequestServiceTests {
     @Test
     public void testUpdateRequest() throws Exception {
         Long idRequest = 1L;
-        Request mockRequest = new Request(/* Configurar el objeto Request simulado */);
+        Request mockRequest = Request.builder().id(1L).build();
         when(requestRepository.findById(idRequest)).thenReturn(java.util.Optional.of(mockRequest));
 
         requestService.updateRequest(idRequest);
