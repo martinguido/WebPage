@@ -13,6 +13,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -43,9 +44,7 @@ public class SubscriberServiceTests {
     @Test
     public void testCreateSubscriber() {
         SubscriberDTO subscriberDTO = new SubscriberDTO("John", "john@example.com");
-
-        LocalDateTime fechaHoraActual = LocalDateTime.now();
-        Subscriber expectedSubscriber = new Subscriber(subscriberDTO.getName(), subscriberDTO.getMail(), java.sql.Timestamp.valueOf(fechaHoraActual));
+        Subscriber expectedSubscriber = new Subscriber(subscriberDTO.getName(), subscriberDTO.getMail(),new Date());
 
         subscriberService.createSubscriber(subscriberDTO);
 

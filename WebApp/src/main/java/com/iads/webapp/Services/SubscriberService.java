@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -19,8 +20,7 @@ public class SubscriberService {
     }
 
     public void createSubscriber(SubscriberDTO subscriberDTO) {
-        LocalDateTime fechaHoraActual = LocalDateTime.now();
-        Subscriber aNewSubscriber = new Subscriber(subscriberDTO.getName(), subscriberDTO.getMail(), java.sql.Timestamp.valueOf(fechaHoraActual));
+        Subscriber aNewSubscriber = new Subscriber(subscriberDTO.getName(), subscriberDTO.getMail(), new Date());
         subscriberRepository.save(aNewSubscriber);
     }
     public void saveAll(List<Subscriber> someSubscribers) {

@@ -9,7 +9,6 @@ public class SubscriberDTO {
 
     private String name;
     private String mail;
-    private Date subscriptionDate;
 
     public SubscriberDTO() {
     }
