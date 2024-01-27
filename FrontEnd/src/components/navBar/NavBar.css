@@ -49,3 +49,41 @@
   align-items: center;
   justify-content: center;
 }
+
+.modalIngresa {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .boxIngresa {
+    width: 40vw;
+    height: 35vh;
+  }
+  .ingresaInput {
+    width: 60%;
+  }
+  .buttonIngresa {
+    margin-top: 2.5%;
+    height: 5vh;
+    width: 15vw;
+  }
+}
+@media (max-width: 768px) {
+  .boxIngresa {
+    padding: 2%;
+    width: 98%;
+    height: 70%;
+  }
+  .ingresaInput {
+    width: 100%;
+  }
+  .buttonIngresa {
+    margin-top: 2.5%;
+    height: 7vh;
+    width: 100%;
+  }
+}

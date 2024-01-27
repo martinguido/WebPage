@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import logo from "../header/IADS.png";
+import logo from "./IADS.png";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -446,11 +446,12 @@ function DrawerAppBar(props) {
         <Modal
           open={showModal}
           onClose={closeModal}
+          className="modalIngresa"
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
           style={{ display: "flex" }}
         >
-          <Box sx={style} style={{ width: "50vw", height: "55vh" }}>
+          <Box sx={style} className="boxIngresa">
             <div className="navBarModal">
               <h1 className="navBarTitle">Ingresar a IADS</h1>
               <TextField
@@ -459,7 +460,7 @@ function DrawerAppBar(props) {
                 label="Email"
                 placeholder="Ingrese su email..."
                 variant="filled"
-                style={{ width: "25vw" }}
+                className="ingresaInput"
                 onChange={(event) => setMail(event.target.value)}
                 onBlur={blurHandlerMail}
               />
@@ -468,11 +469,11 @@ function DrawerAppBar(props) {
               </span>
               <TextField
                 required
+                className="ingresaInput"
                 id="filled-password-input"
                 label="Contraseña"
                 type="password"
                 autoComplete="current-password"
-                style={{ width: "25vw" }}
                 placeholder="Ingrese su contraseña..."
                 variant="filled"
                 onChange={(event) => setPassword(event.target.value)}
@@ -486,7 +487,8 @@ function DrawerAppBar(props) {
               <Button
                 variant="contained"
                 onClick={submitForm}
-                style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
+                className="buttonIngresa"
+                // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
               >
                 Ingresar
               </Button>
