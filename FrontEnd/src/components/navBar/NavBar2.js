@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,18 +7,20 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import logo from "../header/IADS.png";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import logo from "../header/IADS.png";
 import Modal from "@mui/material/Modal";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, login } from "../redux/auth";
 
@@ -28,19 +30,13 @@ const SuccessAlert = React.forwardRef(function Alert(props, ref) {
 const ErrorAlert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-
-const drawerWidth = 240;
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
+const drawerWidth = 240;
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -53,7 +49,7 @@ const darkTheme = createTheme({
   },
 });
 
-const NavBar = (props) => {
+function DrawerAppBar(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [showManagerBoard, setShowManagerBoard] = useState(false);
@@ -66,10 +62,10 @@ const NavBar = (props) => {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [hasLogin, setHasLogin] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [value, setValue] = useState(0);
   const { window } = props;
-  const [showModal, setShowModal] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [value, setValue] = React.useState(0);
   const openModal = () => {
     setShowModal(true);
   };
@@ -79,116 +75,21 @@ const NavBar = (props) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
   const handleSignOut = () => {
     dispatch(logout());
     navigate("/");
   };
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h3" sx={{ my: 2 }}>
-        <div className="divNavBar">
-          <img src={logo} className="logoNavBar" alt="Logo de IADS" />
-        </div>
-      </Typography>
-      <Divider />
-      <List>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="nav tabs example"
-          textColor="secondary"
-          indicatorColor="secondary"
-        >
-          <Tab
-            label="Home"
-            className="linkTabNavBar"
-            onClick={() => navigate("/")}
-          />
-          <Tab
-            label="Mision"
-            className="linkTabNavBar"
-            onClick={() => navigate("/mision")}
-          />
-          <Tab
-            label="Testimonios"
-            className="linkTabNavBar"
-            onClick={() => navigate("/testimonios")}
-          />
-          <Tab
-            label="Aliados"
-            className="linkTabNavBar"
-            onClick={() => navigate("/aliados")}
-          />
-          {/* <Tab
-                        label="Voluntarios"
-                        className="linkTabNavBar"
-                        onClick={() => navigate("/voluntarios")}
-                    /> */}
-          <Tab
-            label="Consejos Verdes"
-            className="linkTabNavBar"
-            onClick={() => navigate("/consejosverdes")}
-          />
-          <Tab
-            label="Donaciones"
-            className="linkTabNavBar"
-            onClick={() => navigate("/donaciones")}
-          />
-          <Tab
-            label="FAQ"
-            className="linkTabNavBar"
-            onClick={() => navigate("/faq")}
-          />
-          <Tab
-            label="Contactanos"
-            className="linkTabNavBar"
-            onClick={() => navigate("/contactanos")}
-          />
-          {(showManagerBoard || showAdminBoard) && (
-            <Tab
-              label="Subscriptores"
-              className="linkTabNavBar"
-              onClick={() => navigate("/Subscriptores")}
-            />
-          )}
-          {(showManagerBoard || showAdminBoard) && (
-            <Tab
-              label="Consultas"
-              className="linkTabNavBar"
-              onClick={() => navigate("/Consulta")}
-            />
-          )}
-          {(showManagerBoard || showAdminBoard) && (
-            <Tab
-              label="Salir"
-              className="linkTabNavBar"
-              onClick={() => {
-                handleSignOut();
-              }}
-            />
-          )}
-          <Tab label="Ingresa" className="linkTabNavBar" onClick={openModal} />
-        </Tabs>
-      </List>
-    </Box>
-  );
-
   const handleOpenSuccess = () => {
     setOpenSuccess(true);
+  };
+  const handleOpenError = () => {
+    setOpenError(true);
   };
   const handleCloseSuccess = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
     setOpenSuccess(false);
-  };
-  const handleOpenError = () => {
-    setOpenError(true);
   };
   const handleCloseError = (event, reason) => {
     if (reason === "clickaway") {
@@ -197,7 +98,6 @@ const NavBar = (props) => {
     setOpenError(false);
   };
   const submitForm = async (event) => {
-    // event.preventDefault();
     if (isMailValid && isPasswordValid) {
       const userData = {
         email: mail,
@@ -205,7 +105,6 @@ const NavBar = (props) => {
       };
       try {
         const loginData = await dispatch(login(userData));
-        console.log(loginData);
         if (loginData.type === "auth/login/fulfilled") {
           handleOpenSuccess();
           setTimeout(() => {
@@ -241,8 +140,8 @@ const NavBar = (props) => {
       setIsPasswordValid(false);
     }
   };
+
   useEffect(() => {
-    console.log("HAS LOGIN:", hasLogin);
     if (currentUser) {
       setShowManagerBoard(currentUser.role === "MANAGER");
       setShowAdminBoard(currentUser.role === "ADMIN");
@@ -251,11 +150,148 @@ const NavBar = (props) => {
       setShowAdminBoard(false);
     }
   }, [currentUser, hasLogin]);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+
+  const drawer = (
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center" }}
+      color="primary"
+    >
+      <ThemeProvider theme={darkTheme}>
+        <img src={logo} style={{ width: "50%" }} alt="Logo de IADS" />
+        <Divider />
+        <List
+          className="responsiveDrawTab"
+          style={{
+            height: "100%",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <ListItem key={"item"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Home"
+              className="linkTabNavBar"
+              onClick={() => navigate("/")}
+            />
+          </ListItem>
+          <ListItem key={"item2"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Mision"
+              className="linkTabNavBar"
+              onClick={() => navigate("/mision")}
+            />
+          </ListItem>
+          <ListItem key={"item3"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Testimonios"
+              className="linkTabNavBar"
+              onClick={() => navigate("/testimonios")}
+            />
+          </ListItem>
+          <ListItem key={"item4"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Aliados"
+              className="linkTabNavBar"
+              onClick={() => navigate("/aliados")}
+            />
+          </ListItem>
+          <ListItem key={"item5"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Consejos Verdes"
+              className="linkTabNavBar"
+              onClick={() => navigate("/consejosverdes")}
+            />
+          </ListItem>
+          <ListItem key={"item6"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Donaciones"
+              className="linkTabNavBar"
+              onClick={() => navigate("/donaciones")}
+            />
+          </ListItem>
+          <ListItem key={"item7"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="FAQ"
+              className="linkTabNavBar"
+              onClick={() => navigate("/faq")}
+            />
+          </ListItem>
+          <ListItem key={"item8"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Contactanos"
+              className="linkTabNavBar"
+              onClick={() => navigate("/contactanos")}
+            />
+          </ListItem>
+          {(showManagerBoard || showAdminBoard) && (
+            <ListItem
+              key={"item9"}
+              disablePadding
+              className="responsiveDrawTab"
+            >
+              <Tab
+                label="Subscriptores"
+                className="linkTabNavBar"
+                onClick={() => navigate("/Subscriptores")}
+              />
+            </ListItem>
+          )}
+
+          {(showManagerBoard || showAdminBoard) && (
+            <ListItem
+              key={"item10"}
+              disablePadding
+              className="responsiveDrawTab"
+            >
+              <Tab
+                label="Consultas"
+                className="linkTabNavBar"
+                onClick={() => navigate("/Consulta")}
+              />
+            </ListItem>
+          )}
+
+          {(showManagerBoard || showAdminBoard) && (
+            <ListItem
+              key={"item11"}
+              disablePadding
+              className="responsiveDrawTab"
+            >
+              <Tab
+                label="Salir"
+                className="linkTabNavBar"
+                onClick={() => {
+                  handleSignOut();
+                }}
+              />
+            </ListItem>
+          )}
+
+          <ListItem key={"item12"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Ingresa"
+              className="linkTabNavBar"
+              onClick={openModal}
+            />
+          </ListItem>
+        </List>
+        {/* </Tabs> */}
+      </ThemeProvider>
+    </Box>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
   return (
     <Box sx={{ display: "flex" }}>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <AppBar component="nav" position="sticky" color="primary">
+        <AppBar component="nav" position="fixed">
           <Toolbar>
             <IconButton
               color="inherit"
@@ -267,108 +303,107 @@ const NavBar = (props) => {
               <MenuIcon />
             </IconButton>
             <Typography
-              variant="h1"
+              variant="h6"
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              <div className="divNavBar">
-                <img src={logo} className="logoNavBar" alt="Logo de IADS" />
-                {/* <h1 className="h1NavBar">I A D S</h1> */}
-              </div>
+              <img src={logo} style={{ height: "3rem" }} alt="Logo de IADS" />
             </Typography>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              aria-label="nav tabs example"
-              textColor="secondary"
-              indicatorColor="secondary"
-            >
-              <Tab
-                label="Home"
-                className="linkTabNavBar"
-                onClick={() => navigate("/")}
-              />
-              <Tab
-                label="Mision"
-                className="linkTabNavBar"
-                onClick={() => navigate("/mision")}
-              />
-              <Tab
-                label="Testimonios"
-                className="linkTabNavBar"
-                onClick={() => navigate("/testimonios")}
-              />
-              <Tab
-                label="Aliados"
-                className="linkTabNavBar"
-                onClick={() => navigate("/aliados")}
-              />
-              {/* <Tab
-                                label="Voluntarios"
-                                className="linkTabNavBar"
-                                onClick={() => navigate("/voluntarios")}
-                            /> */}
-              <Tab
-                label="Consejos Verdes"
-                className="linkTabNavBar"
-                onClick={() => navigate("/consejosverdes")}
-              />
-              <Tab
-                label="Donaciones"
-                className="linkTabNavBar"
-                onClick={() => navigate("/donaciones")}
-              />
-              <Tab
-                label="FAQ"
-                className="linkTabNavBar"
-                onClick={() => navigate("/faq")}
-              />
-              <Tab
-                label="Contactanos"
-                className="linkTabNavBar"
-                onClick={() => navigate("/contactanos")}
-              />
-              {(showManagerBoard || showAdminBoard) && (
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="nav tabs example"
+                textColor="secondary"
+                indicatorColor="secondary"
+              >
                 <Tab
-                  label="Subscriptores"
+                  label="Home"
                   className="linkTabNavBar"
-                  onClick={() => navigate("/subscriptores")}
+                  onClick={() => navigate("/")}
                 />
-              )}
-              {(showManagerBoard || showAdminBoard) && (
                 <Tab
-                  label="Consultas"
+                  label="Mision"
                   className="linkTabNavBar"
-                  onClick={() => navigate("/consultas")}
+                  onClick={() => navigate("/mision")}
                 />
-              )}
-              {(showManagerBoard || showAdminBoard) && (
                 <Tab
-                  label="Salir"
+                  label="Testimonios"
                   className="linkTabNavBar"
-                  onClick={() => {
-                    handleSignOut();
-                  }}
+                  onClick={() => navigate("/testimonios")}
                 />
-              )}
-
-              {!showManagerBoard && !showAdminBoard && (
                 <Tab
-                  label="Ingresa"
+                  label="Aliados"
                   className="linkTabNavBar"
-                  onClick={openModal}
+                  onClick={() => navigate("/aliados")}
                 />
-              )}
-            </Tabs>
+                <Tab
+                  label="Consejos Verdes"
+                  className="linkTabNavBar"
+                  onClick={() => navigate("/consejosverdes")}
+                />
+                <Tab
+                  label="Donaciones"
+                  className="linkTabNavBar"
+                  onClick={() => navigate("/donaciones")}
+                />
+                <Tab
+                  label="FAQ"
+                  className="linkTabNavBar"
+                  onClick={() => navigate("/faq")}
+                />
+                <Tab
+                  label="Contactanos"
+                  className="linkTabNavBar"
+                  onClick={() => navigate("/contactanos")}
+                />
+                {(showManagerBoard || showAdminBoard) && (
+                  <Tab
+                    label="Subscriptores"
+                    className="linkTabNavBar"
+                    onClick={() => navigate("/subscriptores")}
+                  />
+                )}
+                {(showManagerBoard || showAdminBoard) && (
+                  <Tab
+                    label="Consultas"
+                    className="linkTabNavBar"
+                    onClick={() => navigate("/consultas")}
+                  />
+                )}
+                {(showManagerBoard || showAdminBoard) && (
+                  <Tab
+                    label="Salir"
+                    className="linkTabNavBar"
+                    onClick={() => {
+                      handleSignOut();
+                    }}
+                  />
+                )}
+                {!showManagerBoard && !showAdminBoard && (
+                  <Tab
+                    label="Ingresa"
+                    className="linkTabNavBar"
+                    onClick={openModal}
+                  />
+                )}
+              </Tabs>
+            </Box>
           </Toolbar>
         </AppBar>
-        <Box component="nav">
+      </ThemeProvider>
+      <nav>
+        <ThemeProvider theme={darkTheme}>
           <Drawer
             container={container}
+            color="primary"
+            enableColorOnDark
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}
-            ModalProps={{ keepMounted: true }}
+            ModalProps={{
+              keepMounted: true,
+            }}
             sx={{
               display: { xs: "block", sm: "none" },
               "& .MuiDrawer-paper": {
@@ -379,8 +414,8 @@ const NavBar = (props) => {
           >
             {drawer}
           </Drawer>
-        </Box>
-      </ThemeProvider>
+        </ThemeProvider>
+      </nav>
       <Snackbar
         open={openSuccess}
         autoHideDuration={6000}
@@ -461,6 +496,14 @@ const NavBar = (props) => {
       )}
     </Box>
   );
+}
+
+DrawerAppBar.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
 };
 
-export default NavBar;
+export default DrawerAppBar;

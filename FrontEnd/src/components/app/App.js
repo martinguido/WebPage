@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js";
 import Home from "../home/Home.js";
 // import Header from "../header/Header.js";
-import NavBar from "../navBar/NavBar.js";
+import NavBar from "../navBar/NavBar2.js";
 import Mision from "../mision/Mision.js";
 import Testimonios from "../testimonios/Testimonios.js";
 import Aliados from "../aliados/Aliados.js";
