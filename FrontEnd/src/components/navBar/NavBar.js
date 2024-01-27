@@ -54,6 +54,7 @@ const darkTheme = createTheme({
 });
 
 const NavBar = (props) => {
+
     let navigate = useNavigate();
     const dispatch = useDispatch();
     const [showManagerBoard, setShowManagerBoard] = useState(false);
@@ -86,6 +87,7 @@ const NavBar = (props) => {
         dispatch(logout());
         navigate("/");
     };
+
     const container =
         window !== undefined ? () => window().document.body : undefined;
     const drawer = (
@@ -252,6 +254,7 @@ const NavBar = (props) => {
             setShowAdminBoard(false);
         }
     }, [currentUser, hasLogin]);
+
     return (
         <Box sx={{ display: "flex" }}>
             <ThemeProvider theme={darkTheme}>
@@ -466,5 +469,8 @@ const NavBar = (props) => {
         </Box >
     );
 };
+
+
+
 
 export default NavBar;
