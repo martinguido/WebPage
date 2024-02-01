@@ -3,10 +3,33 @@
   background-color: var(--brand-primary);
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: space-evenly;
-  padding: 1%;
+  padding: 5% 0 2.5% 0;
   width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .donaciones {
+    padding-top: 20%;
+  }
+  .donacionesDivButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+  }
+  .donacionesButton {
+    background: var(--brand-button);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px var(--brand-button-shadow);
+    color: var(--brand-text);
+    cursor: pointer;
+    font-size: x-large;
+    height: 8vh;
+    width: 85vw;
+  }
 }
 .donacionesTitle {
   color: var(--brand-text);
@@ -41,16 +64,18 @@
   padding-top: 2.5%;
   width: 100vw;
 }
-.donacionesButton {
-  background: var(--brand-button);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 20px var(--brand-button-shadow);
-  color: var(--brand-text);
-  cursor: pointer;
-  font-size: x-large;
-  height: 8vh;
-  width: 30vw;
+@media (min-width: 769px) {
+  .donacionesButton {
+    background: var(--brand-button);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px var(--brand-button-shadow);
+    color: var(--brand-text);
+    cursor: pointer;
+    font-size: x-large;
+    height: 8vh;
+    width: 30vw;
+  }
 }
 .donacionesButton:hover {
   transform: scale(1.01);
