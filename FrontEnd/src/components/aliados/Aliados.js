@@ -6,31 +6,85 @@ import aliados4 from "./img/aliados4.jpeg";
 import aliados5 from "./img/aliados5.jpeg";
 
 const Aliados = () => {
-
   return (
     <div className="aliadosDiv">
       <h1 className="aliadosTitle">Cooperamos con:</h1>
-      <div className="aliadosLogos">
-        <div className="aliadosLogosFirstRow">
+      <>
+        <div className="aliadosLogos">
+          <div className="aliadosLogosFirstRow">
+            <a
+              href="https://www.mercosur.int/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={aliados1}
+                alt="logo de Mercosur"
+                className="aliadosLogo"
+              />
+            </a>
+            <a
+              href="https://www.giz.de/en/html/index.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={aliados2} alt="logo de GTZ" className="aliadosLogo" />
+            </a>
+            <a href="https://www.unep.org/es" target="_blank" rel="noreferrer">
+              <img src={aliados3} alt="logo de PNUMA" className="aliadosLogo" />
+            </a>
+          </div>
+          <div className="aliadosLogosSecondRow">
+            <a href="https://iclei.org/" target="_blank" rel="noreferrer">
+              <img src={aliados4} alt="logo de ICLEI" className="aliadosLogo" />
+            </a>
+            <a
+              href="https://www.facebook.com/consumidores.argentinos.9/?locale=es_LA"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={aliados5}
+                alt="logo de Consumidores Argentinos"
+                className="aliadosLogo"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="mobileAliados">
           <a href="https://www.mercosur.int/" target="_blank" rel="noreferrer">
-            <img src={aliados1} alt="logo de Mercosur" className="aliadosLogo" />
+            <img
+              src={aliados1}
+              alt="logo de Mercosur"
+              className="aliadosLogo"
+            />
           </a>
-          <a href="https://www.giz.de/en/html/index.html" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.giz.de/en/html/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={aliados2} alt="logo de GTZ" className="aliadosLogo" />
           </a>
           <a href="https://www.unep.org/es" target="_blank" rel="noreferrer">
             <img src={aliados3} alt="logo de PNUMA" className="aliadosLogo" />
           </a>
-        </div>
-        <div className="aliadosLogosSecondRow">
           <a href="https://iclei.org/" target="_blank" rel="noreferrer">
             <img src={aliados4} alt="logo de ICLEI" className="aliadosLogo" />
           </a>
-          <a href="https://www.facebook.com/consumidores.argentinos.9/?locale=es_LA" target="_blank" rel="noreferrer">
-            <img src={aliados5} alt="logo de Consumidores Argentinos" className="aliadosLogo" />
+          <a
+            href="https://www.facebook.com/consumidores.argentinos.9/?locale=es_LA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={aliados5}
+              alt="logo de Consumidores Argentinos"
+              className="aliadosLogo"
+            />
           </a>
         </div>
-      </div>
+      </>
     </div>
   );
 };

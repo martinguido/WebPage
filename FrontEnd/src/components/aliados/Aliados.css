@@ -5,18 +5,13 @@
   flex-direction: column;
   justify-content: center;
   width: 100vw;
+  padding-top: 5%;
 }
 .aliadosTitle {
   color: var(--brand-text);
   padding: 25px 5px 0px 0px;
 }
-.aliadosLogos {
-  align-items: space-evenly;
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
-  justify-content: space-evenly;
-}
+
 .aliadosLogosFirstRow,
 .aliadosLogosSecondRow {
   align-items: center;
@@ -37,4 +32,35 @@
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
   transition: all 1s ease;
+}
+@media (max-width: 768px) {
+  .aliadosDiv {
+    padding-top: 20%;
+  }
+  .mobileAliados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .aliadosLogo {
+    margin-bottom: 7.5%;
+    width: 70vw;
+  }
+  .aliadosLogos {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .mobileAliados {
+    display: none;
+  }
+  .aliadosLogos {
+    align-items: space-evenly;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-evenly;
+  }
 }
