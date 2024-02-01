@@ -27,3 +27,16 @@
   font-size: medium;
   font-weight: 400;
 }
+@media (max-width: 768px) {
+  .card {
+    width: 85vw;
+    margin-bottom: 5%;
+    /* height: 1700px; */
+  }
+  .cardTitle {
+    padding-top: 2.5vh;
+  }
+  .cardText {
+    padding-bottom: 2.5vh;
+  }
+}
