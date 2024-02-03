@@ -8,7 +8,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 export const login = createAsyncThunk(
   "auth/login",
   async ({ email, password }, thunkAPI) => {
-    console.log("LLEGA", email, password);
+    // console.log("LLEGA", email, password);
     try {
       const data = await AuthService.login(email, password);
 

@@ -5,7 +5,6 @@
 @import "./contactanos/Contactanos.css";
 @import "./donaciones/Donaciones.css";
 @import "./faq/FAQ.css";
-@import "./header/Header.css";
 @import "./home/Home.css";
 @import "./mision/Mision.css";
 @import "./modalNewsletter/ModalNewsletter.css";
@@ -13,6 +12,9 @@
 @import "./redes/Redes.css";
 @import "./subscriptores/Subscriptores.css";
 @import "./consultas/Consultas.css";
+@import "./testimonios/Testimonios.css";
+@import "./conocenos/Conocenos.css";
+
 :root {
   --brand-primary: #252525;
   --brand-text: #fff;
@@ -30,4 +32,10 @@ body {
   background-color: var(--brand-primary);
   font-family: "Mulish", sans-serif;
   width: 100vw;
+}
+
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
 }

@@ -4,9 +4,13 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import authHeader from "../services/auth-header";
 import apiUrl from "../../deploy";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 const Consultas = () => {
   const [rows, setRows] = useState([]);
+  const { user: currentUser } = useSelector((state) => state.auth);
+
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(0);
   const columns = [
@@ -87,33 +91,62 @@ const Consultas = () => {
     },
   ];
   const API_URL_CONSULTAS = apiUrl + "/api/v1/manager/consultas";
+
+  // const handleAnswer = (idRequest, mail, bodyText) => {
+  //   const preBody =
+  //     "Hola, te contactamos de IADS. Como estas? Recientemente, nos contactaste por la siguiente consulta:%0D%0A";
+  //   window.location =
+  //     "mailto:" + mail + "?subject=Consulta%20IADS&body=" + preBody + bodyText;
+  //   const requestOptions = {
+  //     method: "PUT",
+  //     headers: { headers: authHeader(), "Content-Type": "application/json" },
+  //   };
+
+  //   const updateData = async (idRequest) => {
+  //     const response = await fetch(
+  //       apiUrl + "/api/v1/manager/consultas/actualizarConsulta/" + idRequest,
+  //       requestOptions
+  //     );
+  //     const data = await response;
+  //     console.log(data);
+  //   };
+  //   updateData(idRequest).catch(console.error);
+  //   setCounter(counter + 1);
+  // };
+
   const handleAnswer = (idRequest, mail, bodyText) => {
     const preBody =
       "Hola, te contactamos de IADS. Como estas? Recientemente, nos contactaste por la siguiente consulta:%0D%0A";
     window.location =
       "mailto:" + mail + "?subject=Consulta%20IADS&body=" + preBody + bodyText;
+
     const requestOptions = {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
+      headers: { ...authHeader(), "Content-Type": "application/json" },
     };
 
     const updateData = async (idRequest) => {
-      const response = await fetch(
-        apiUrl + "/api/v1/consultas/actualizarConsulta/" +
-        idRequest,
-        requestOptions
-      );
-      const data = await response;
-      console.log(data);
+      try {
+        const response = await fetch(
+          apiUrl + "/api/v1/manager/consultas/actualizarConsulta/" + idRequest,
+          requestOptions
+        );
+        const data = await response.text();
+        // console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
-    updateData(idRequest).catch(console.error);
+
+    updateData(idRequest);
     setCounter(counter + 1);
   };
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(API_URL_CONSULTAS, {
-        headers: authHeader(), method: 'GET',
-        'Content-Type': 'application/json'
+        headers: authHeader(),
+        method: "GET",
+        "Content-Type": "application/json",
       });
       const json = await data.json();
       console.log(json);
@@ -121,8 +154,11 @@ const Consultas = () => {
       setRows(json);
     };
     fetchData().catch(console.error);
+    // eslint-disable-next-line
   }, []);
-
+  if (!currentUser) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className="consultas">
       <div>

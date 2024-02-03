@@ -3,12 +3,13 @@ import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import authHeader from "../services/auth-header";
 import apiUrl from "../../deploy";
-
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 const API_URL_SUBSCRIPTORES = apiUrl + "/api/v1/manager/subscriptores";
-
 
 const Subscriptores = () => {
   const [rows, setRows] = useState([]);
+  const { user: currentUser } = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(true);
   const columns = [
     {
@@ -50,8 +51,9 @@ const Subscriptores = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(API_URL_SUBSCRIPTORES, {
-        headers: authHeader(), method: 'GET',
-        'Content-Type': 'application/json'
+        headers: authHeader(),
+        method: "GET",
+        "Content-Type": "application/json",
       });
       const json = await data.json();
       console.log(json);
@@ -60,7 +62,9 @@ const Subscriptores = () => {
     };
     fetchData().catch(console.error);
   }, []);
-
+  if (!currentUser) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className="subscriptores">
       <div>

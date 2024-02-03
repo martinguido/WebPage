@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import ModalNewsletter from "../modalNewsletter/ModalNewsletter.js";
 import Home from "../home/Home.js";
-// import Header from "../header/Header.js";
-import NavBar from "../navBar/NavBar.js";
+import NavBar from "../navBar/NavBar2.js";
 import Mision from "../mision/Mision.js";
 import Testimonios from "../testimonios/Testimonios.js";
 import Aliados from "../aliados/Aliados.js";
@@ -13,6 +12,7 @@ import Redes from "../redes/Redes.js";
 import Contactanos from "../contactanos/Contactanos.js";
 import Consultas from "../consultas/Consultas.js";
 import Subscriptores from "../subscriptores/Subscriptores.js";
+import Conocenos from "../conocenos/Conocenos.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -21,14 +21,14 @@ const App = () => {
     <div>
       {viewModal ? <ModalNewsletter setViewModalState={setViewModal} /> : null}
       <div>
-        <header className="appHeader">
+        <header className="appHeader" data-testid="appHeader">
           <NavBar />
         </header>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Mision" element={<Mision />} />
-            <Route path="/Testimonios" element={<Testimonios />} />
+            <Route path="/Programas" element={<Testimonios />} />
             <Route path="/Aliados" element={<Aliados />} />
             <Route path="/ConsejosVerdes" element={<ConsejosVerdes />} />
             <Route path="/Donaciones" element={<Donaciones />} />
@@ -36,6 +36,7 @@ const App = () => {
             <Route path="/Contactanos" element={<Contactanos />} />
             <Route path="/Subscriptores" element={<Subscriptores />} />
             <Route path="/Consultas" element={<Consultas />} />
+            <Route path="/Conocenos" element={<Conocenos />} />
           </Routes>
         </div>
         <footer>

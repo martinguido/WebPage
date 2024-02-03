@@ -16,10 +16,11 @@ public class KeepAliveService {
     private final RestTemplate restTemplate;
 
     // Execute every 2 minutes (120000ms)
-    @Scheduled(fixedRate = 60000) // CADA UN MINUTO
+    @Scheduled(fixedRate = 1200000) // CADA DOS MINUTO
     public void keepBackendAlive() {
         ResponseEntity<String> response = restTemplate
-                .getForEntity("https://backendmessismo.onrender.com/api/v1/auth/health", String.class);
+//                .getForEntity("https://backendmessismo.onrender.com/api/v1/auth/health", String.class);
+                .getForEntity("http://localhost:8080/api/v1/auth/health", String.class);
         // System.out.println("Server response: " + response);
         log.info("Server response: " + response.getBody());
     }
