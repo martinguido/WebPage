@@ -12,6 +12,8 @@
 @import "./redes/Redes.css";
 @import "./subscriptores/Subscriptores.css";
 @import "./consultas/Consultas.css";
+@import "./testimonios/Testimonios.css";
+
 :root {
   --brand-primary: #252525;
   --brand-text: #fff;

@@ -1,0 +1,10 @@
+.divTestimonios {
+  background-color: var(--brand-primary);
+  padding-top: 5%;
+}
+
+@media (max-width: 768px) {
+  .divTestimonios {
+    padding-top: 20%;
+  }
+}
