@@ -115,8 +115,6 @@
   padding: 1% 5% 1% 5%;
   text-align: center;
 }
-
-/* Estilos para dispositivos móviles con un ancho máximo de 767px */
 @media only screen and (max-width: 767px) {
   .mobileSec {
     display: block;
@@ -128,15 +126,13 @@
     padding-bottom: 2.5%;
     padding-top: 15%;
     width: 100vw;
-    height: 100%;
+    /* height: 100%; */
   }
 
   .misionDiv {
     display: none;
   }
 }
-
-/* Estilos para dispositivos de escritorio con un ancho mínimo de 768px */
 @media only screen and (min-width: 768px) {
   .mobileSec {
     display: none;

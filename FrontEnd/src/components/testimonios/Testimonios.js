@@ -38,7 +38,10 @@ const Testimonios = () => {
     <div className="divTestimonios">
       {/* <h1>Testimonios</h1> */}
       <Box
-        sx={{ width: "100%", minHeight: 377 }}
+        sx={{
+          width: "100%",
+          // minHeight: 377
+        }}
         style={{ paddingTop: "2.5%" }}
       >
         <div className="testimoniosFirstRow">

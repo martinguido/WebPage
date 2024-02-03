@@ -3,7 +3,7 @@
   background-color: var(--brand-primary);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   justify-content: space-evenly;
   padding: 5%;
   width: 100vw;
