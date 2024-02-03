@@ -43,7 +43,7 @@ public class SubscriberServiceTests {
 
     @Test
     public void testCreateSubscriber() {
-        SubscriberDTO subscriberDTO = new SubscriberDTO("John", "john@example.com");
+        SubscriberDTO subscriberDTO = new SubscriberDTO("John", "guidomartin7@gmail.com");
         Subscriber expectedSubscriber = new Subscriber(subscriberDTO.getName(), subscriberDTO.getMail(),new Date());
 
         subscriberService.createSubscriber(subscriberDTO);
