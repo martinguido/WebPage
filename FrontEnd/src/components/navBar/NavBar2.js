@@ -187,9 +187,9 @@ function DrawerAppBar(props) {
           </ListItem>
           <ListItem key={"item3"} disablePadding className="responsiveDrawTab">
             <Tab
-              label="Testimonios"
+              label="Programas"
               className="linkTabNavBar"
-              onClick={() => navigate("/testimonios")}
+              onClick={() => navigate("/programas")}
             />
           </ListItem>
           <ListItem key={"item4"} disablePadding className="responsiveDrawTab">
@@ -328,9 +328,9 @@ function DrawerAppBar(props) {
                   onClick={() => navigate("/mision")}
                 />
                 <Tab
-                  label="Testimonios"
+                  label="Programas"
                   className="linkTabNavBar"
-                  onClick={() => navigate("/testimonios")}
+                  onClick={() => navigate("/programas")}
                 />
                 <Tab
                   label="Aliados"
@@ -488,7 +488,7 @@ function DrawerAppBar(props) {
                 variant="contained"
                 onClick={submitForm}
                 className="buttonIngresa"
-                // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
+              // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
               >
                 Ingresar
               </Button>

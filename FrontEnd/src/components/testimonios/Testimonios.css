@@ -2,9 +2,27 @@
   background-color: var(--brand-primary);
   padding-top: 5%;
 }
+.testimoniosFirstRow {
+  display: flex;
 
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2.5%;
+}
+
+.buttonDescarga {
+  margin-bottom: 2.5%;
+}
 @media (max-width: 768px) {
   .divTestimonios {
     padding-top: 20%;
+  }
+  .testimoniosFirstRow {
+    flex-direction: column;
+    height: 20vh;
+  }
+  .buttonDescarga {
+    margin-bottom: 5vh;
   }
 }

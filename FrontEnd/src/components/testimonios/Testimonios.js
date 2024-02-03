@@ -12,14 +12,51 @@ import sus from "./sust.jpg";
 import pro1 from "./pro1.jpg";
 import pro2 from "./pro2.jpg";
 import pro3 from "./pro4.jpg";
+import Button from "@mui/material/Button";
+import archivoLocal1 from "./YXC.pdf";
+import archivoLocal2 from "./iadsCompras.pdf";
+
 const Testimonios = () => {
+  const descargarYxC = () => {
+    const enlaceTemporal = document.createElement('a');
+    enlaceTemporal.href = archivoLocal1;
+    enlaceTemporal.download = 'YXC.pdf';
+    document.body.appendChild(enlaceTemporal);
+    enlaceTemporal.click();
+    document.body.removeChild(enlaceTemporal);
+  };
+  const descargarPrograma = () => {
+    const enlaceTemporal = document.createElement('a');
+    enlaceTemporal.href = archivoLocal2;
+    enlaceTemporal.download = 'iadsCompras.pdf';
+    document.body.appendChild(enlaceTemporal);
+    enlaceTemporal.click();
+    document.body.removeChild(enlaceTemporal);
+  };
+
   return (
     <div className="divTestimonios">
-      <h1>Testimonios</h1>
+      {/* <h1>Testimonios</h1> */}
       <Box
         sx={{ width: "100%", minHeight: 377 }}
         style={{ paddingTop: "2.5%" }}
       >
+        <div className="testimoniosFirstRow">
+          <Button
+            variant="contained"
+            onClick={descargarYxC}
+            className="buttonDescarga"
+          >
+            Descargar guía YxC
+          </Button>
+          <Button
+            variant="contained"
+            onClick={descargarPrograma}
+            className="buttonDescarga"
+          >
+            Descargar programa Compras Sustentables
+          </Button>
+        </div>
         <div
           style={{
             display: "flex",
