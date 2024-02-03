@@ -8,9 +8,29 @@
   justify-content: center;
   align-items: center;
 }
-
+.divVoluntarios {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.divRenglonConocenos {
+  padding-top: 2.5%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 @media (max-width: 768px) {
   .divConocenos {
     padding-top: 25%;
+  }
+  .divRenglonConocenos {
+    flex-direction: column;
+  }
+  .cardMui {
+    width: 90vw !important;
   }
 }
