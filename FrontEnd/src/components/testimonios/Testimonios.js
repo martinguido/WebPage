@@ -1,10 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Masonry from "@mui/lab/Masonry";
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Typography,
 } from "@mui/material";
 import Card from "@mui/material/Card";
