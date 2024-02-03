@@ -257,7 +257,7 @@ function DrawerAppBar(props) {
               <Tab
                 label="Consultas"
                 className="linkTabNavBar"
-                onClick={() => navigate("/Consulta")}
+                onClick={() => navigate("/Consultas")}
               />
             </ListItem>
           )}
