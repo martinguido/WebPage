@@ -277,14 +277,25 @@ function DrawerAppBar(props) {
               />
             </ListItem>
           )}
-
-          <ListItem key={"item12"} disablePadding className="responsiveDrawTab">
-            <Tab
+          {!showManagerBoard && !showAdminBoard && (
+            <ListItem
+              key={"item12"}
+              disablePadding
+              className="responsiveDrawTab"
+            >
+              {/* <Tab
               label="Ingresa"
               className="linkTabNavBar"
               onClick={openModal}
-            />
-          </ListItem>
+            /> */}
+
+              <Tab
+                label="Ingresa"
+                className="linkTabNavBar"
+                onClick={openModal}
+              />
+            </ListItem>
+          )}
         </List>
         {/* </Tabs> */}
       </ThemeProvider>
@@ -502,7 +513,7 @@ function DrawerAppBar(props) {
                 variant="contained"
                 onClick={submitForm}
                 className="buttonIngresa"
-              // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
+                // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
               >
                 Ingresar
               </Button>

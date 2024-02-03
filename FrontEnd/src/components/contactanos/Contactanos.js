@@ -50,11 +50,11 @@ const Contactanos = () => {
       };
       try {
         const response = await fetch(
-          apiUrl + "/api/v1/consultas/enviarConsulta",
+          apiUrl + "/api/v1/auth/consultas/enviarConsulta",
           requestOptions
         );
-        const data = await response.json();
-        console.log(data);
+        const data = await response.text();
+        // console.log(data);
         handleOpenSuccess();
       } catch (error) {
         console.log(error);
