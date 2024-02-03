@@ -1,0 +1,16 @@
+.divConocenos {
+  background-color: var(--brand-primary);
+  width: 100vw;
+  padding-top: 7.5%;
+  /* height: 250vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .divConocenos {
+    padding-top: 25%;
+  }
+}

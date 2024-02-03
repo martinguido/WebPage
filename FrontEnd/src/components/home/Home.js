@@ -4,7 +4,6 @@ const Home = () => {
 
   return (
     <div>
-
       <div className="home">
         <div className="imgHome1">
           <div className="homeGlass">

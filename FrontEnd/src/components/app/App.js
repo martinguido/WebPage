@@ -12,6 +12,7 @@ import Redes from "../redes/Redes.js";
 import Contactanos from "../contactanos/Contactanos.js";
 import Consultas from "../consultas/Consultas.js";
 import Subscriptores from "../subscriptores/Subscriptores.js";
+import Conocenos from "../conocenos/Conocenos.js";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/Contactanos" element={<Contactanos />} />
             <Route path="/Subscriptores" element={<Subscriptores />} />
             <Route path="/Consultas" element={<Consultas />} />
+            <Route path="/Conocenos" element={<Conocenos />} />
           </Routes>
         </div>
         <footer>

@@ -185,6 +185,13 @@ function DrawerAppBar(props) {
               onClick={() => navigate("/mision")}
             />
           </ListItem>
+          <ListItem key={"item20"} disablePadding className="responsiveDrawTab">
+            <Tab
+              label="Conocenos"
+              className="linkTabNavBar"
+              onClick={() => navigate("/conocenos")}
+            />
+          </ListItem>
           <ListItem key={"item3"} disablePadding className="responsiveDrawTab">
             <Tab
               label="Programas"
@@ -327,6 +334,13 @@ function DrawerAppBar(props) {
                   className="linkTabNavBar"
                   onClick={() => navigate("/mision")}
                 />
+
+                <Tab
+                  label="Conocenos"
+                  className="linkTabNavBar"
+                  onClick={() => navigate("/conocenos")}
+                />
+
                 <Tab
                   label="Programas"
                   className="linkTabNavBar"
@@ -397,7 +411,7 @@ function DrawerAppBar(props) {
           <Drawer
             container={container}
             color="primary"
-            enableColorOnDark
+            // enableColorOnDark
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}

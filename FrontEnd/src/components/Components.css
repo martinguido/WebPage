@@ -13,6 +13,7 @@
 @import "./subscriptores/Subscriptores.css";
 @import "./consultas/Consultas.css";
 @import "./testimonios/Testimonios.css";
+@import "./conocenos/Conocenos.css";
 
 :root {
   --brand-primary: #252525;

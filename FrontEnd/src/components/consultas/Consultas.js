@@ -121,6 +121,7 @@ const Consultas = () => {
       setRows(json);
     };
     fetchData().catch(console.error);
+    // eslint-disable-next-line
   }, []);
 
   return (
