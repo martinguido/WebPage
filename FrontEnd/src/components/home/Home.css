@@ -52,7 +52,10 @@
   .imgHome1,
   .imgHome2,
   .imgHome3 {
-    /* height: 50vh; */
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
   }
 }
