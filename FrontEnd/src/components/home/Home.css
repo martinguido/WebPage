@@ -40,7 +40,7 @@
   font-family: "Euclid Circular A", sans-serif;
 }
 @media only screen and (max-width: 768px) {
-  .imgHome1 {
+  /* .imgHome1 {
     background-image: url("./home1V.jpeg");
   }
   .imgHome2 {
@@ -48,5 +48,11 @@
   }
   .imgHome3 {
     background-image: url("./home3V.jpeg");
+  } */
+  .imgHome1,
+  .imgHome2,
+  .imgHome3 {
+    height: 80vh;
+    background-size: auto;
   }
 }
