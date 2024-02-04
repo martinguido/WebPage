@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
 
   return (
-    <div>
+    <div style={{ height: "100%" }}>
       <div className="home">
         <div className="imgHome1">
           <div className="homeGlass">

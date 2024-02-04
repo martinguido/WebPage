@@ -151,6 +151,7 @@ function DrawerAppBar(props) {
     }
   }, [currentUser, hasLogin]);
 
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -513,7 +514,7 @@ function DrawerAppBar(props) {
                 variant="contained"
                 onClick={submitForm}
                 className="buttonIngresa"
-                // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
+              // style={{ marginTop: "2.5%", height: "6vh", width: "15vw" }}
               >
                 Ingresar
               </Button>

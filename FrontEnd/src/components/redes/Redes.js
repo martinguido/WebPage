@@ -8,35 +8,13 @@ import logoIADS from "../navBar/IADS.png";
 const Redes = (props) => {
   const [showLogo, setShowLogo] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    function handleScroll() {
-      if (
-        window.scrollY + window.innerHeight >
-        document.documentElement.scrollHeight - 100
-      ) {
-        setShowLogo(true);
-      } else if (
-        showLogo &&
-        window.scrollY + window.innerHeight <
-        document.documentElement.scrollHeight - 150
-      ) {
-        setShowLogo(false);
-      }
-    }
-  }, [showLogo]);
-
   const handleModal = () => {
     props.setViewModalState(true);
-    document.body.style.overflow = "hidden";
   };
 
   return (
     <footer className="redesFooter">
-      <div className={`redesDivEffects ${showLogo ? "show" : ""}`}>
+      <div className="redesDivEffects show">
         <img src={logoIADS} alt="Logo IADS" className="redesFooterLogoIADS" />
         <h1 className="redesFooterTitle">Seguinos!</h1>
         <div className="redesLogos">
