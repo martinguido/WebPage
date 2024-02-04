@@ -14,8 +14,7 @@
   }
 }
 .misionTitle {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   width: 100vw;
 }
 .secMision {
