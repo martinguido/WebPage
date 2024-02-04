@@ -52,7 +52,7 @@
   .imgHome1,
   .imgHome2,
   .imgHome3 {
-    height: 80vh;
-    background-size: auto;
+    /* height: 50vh; */
+    background-attachment: fixed;
   }
 }
